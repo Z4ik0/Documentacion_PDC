@@ -26,4 +26,25 @@ sidebar_position: 1
 4. **_Controlar el Flujo de Ejecución_**
    - Algunos patrones de comportamiento se enfocan en cómo controlar el flujo de ejecución de las operaciones en un sistema. 
 ---
+> **_Patrones de Comportamiento_**
+   - Chain of Responsibility
+   - Command
+   - Iterator
+   - Mediator
+   - Memento
+   - Observer
+   - State
+   - Strategy
+   - Template Method
+   - Visitor
+---
 
+**_Para mayor informacion aqui_** 👉
+[Patrones de Comportamiento](https://dianagaerste.com/patrones-de-comportamiento/)   👈
+
+---
+
+> **_Integrantes_**
+   - Irving Cruz Chavez 
+   - Miguel Ignacio Gomez Portes
+   - Gerardo Aristeo Morales Alejo
