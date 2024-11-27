@@ -2,46 +2,28 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Patrones de Diseño de Comportamiento 
+---
+ _Son un tipo de patrón de diseño de software que se enfoca en la comunicación y el comportamiento entre objetos o clases dentro de un sistema, estos patrones ayudan a definir cómo interactúan los objetos para lograr un comportamiento específico y cómo se pueden modificar sus interacciones sin cambiar su estructura interna_. 
 
-Let's discover **Docusaurus in less than 5 minutes**.
 
-## Getting Started
+---
 
-Get started by **creating a new site**.
+## Proposito
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+1. **_Gestionar la Comunicación entre Objetos_**
+   - Muchos patrones de comportamiento están diseñados para facilitar y optimizar cómo los objetos interactúan entre sí.
+   - En sistemas complejos, los objetos pueden tener muchas interacciones, y estos patrones ayudan a definir cómo debe ocurrir esa comunicación de manera eficiente y flexible.
 
-### What you'll need
+2. **_Desacoplar Componentes del Sistema_**
+   - Los patrones de comportamiento ayudan a desacoplar los objetos de un sistema al delegar responsabilidades y controlar la interacción entre ellos de una manera más flexible.
+   - Esto permite cambiar el comportamiento de un sistema sin tener que modificar las clases involucradas directamente.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+3. **_Aumentar la Flexibilidad del Sistema_**
+   - Los patrones de comportamiento facilitan que el sistema se pueda adaptar a cambios o extensiones.
+   - Estos patrones son útiles para agregar nuevos comportamientos sin necesidad de modificar el código existente.
 
-## Generate a new site
+4. **_Controlar el Flujo de Ejecución_**
+   - Algunos patrones de comportamiento se enfocan en cómo controlar el flujo de ejecución de las operaciones en un sistema. 
+---
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
