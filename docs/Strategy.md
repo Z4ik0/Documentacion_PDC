@@ -39,3 +39,38 @@ Las estrategias nuevas se pueden agregar extendiendo el sistema, sin necesidad d
 ### Fomenta la cohesión:
 
 Cada estrategia tiene un propósito bien definido, lo que mejora la claridad y la modularidad del código.
+
+
+## Ventajas
+
+1. Flexibilidad para cambiar algoritmos en tiempo de ejecución:
+
+   Al encapsular los algoritmos en clases independientes, puedes cambiar la estrategia usada por el contexto sin    necesidad de modificar su código. Esto permite que el sistema se adapte a nuevas condiciones de manera dinámica.
+   Ejemplo: En una aplicación de pagos, puedes alternar entre pago con tarjeta de crédito o PayPal según la preferencia del usuario.
+
+2. Cumple con el principio de responsabilidad única (SRP):
+
+   El contexto no necesita preocuparse por los detalles de implementación de las estrategias; cada estrategia maneja su propia lógica.
+   Esto reduce el acoplamiento y mantiene las responsabilidades bien definidas.
+
+
+3. Cumple con el principio abierto-cerrado (OCP):
+
+   Puedes agregar nuevas estrategias sin modificar el código existente, simplemente creando una nueva clase que implemente la interfaz de estrategia.
+
+
+4. Reutilización de código:
+
+    Las estrategias pueden ser reutilizadas en diferentes contextos o sistemas que necesiten comportamientos similares.
+
+5. Reducción de código duplicado:
+
+    En lugar de tener múltiples condicionales (como if-else o switch) para determinar qué algoritmo ejecutar, cada estrategia encapsula su propio comportamiento, eliminando lógica repetida.
+
+6. Facilita la prueba y el mantenimiento:
+
+    Cada estrategia se puede probar de manera aislada, lo que mejora la calidad del código y facilita el diagnóstico de problemas.
+
+7. Escalabilidad:
+
+    A medida que surjan nuevos algoritmos o comportamientos, puedes agregarlos fácilmente sin necesidad de tocar las estrategias existentes o el contexto.
