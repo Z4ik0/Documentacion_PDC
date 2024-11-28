@@ -38,3 +38,14 @@ El definir una interfaz común para todos los comandos se complica si queremos s
 | **Extensibilidad**                   | Es fácil agregar nuevos manejadores a la cadena sin modificar los existentes.                        |
 | **Flexibilidad en el procesamiento** | Permite modificar dinámicamente el orden de los manejadores o la cadena de responsabilidad.          |
 | **Reutilización**                    | Los manejadores individuales pueden ser reutilizados en diferentes cadenas o contextos.              |
+
+## Desventajas.
+
+| **Desventaja**                     | **Descripción**                                                                                              |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Dificultad para depurar**        | Es complicado rastrear qué manejador procesó una solicitud en cadenas largas o complejas.                    |
+| **Posible bajo rendimiento**       | Si la cadena es muy extensa, se pueden generar múltiples llamadas innecesarias antes de procesar la solicitud.|
+| **Orden estricto**                 | El orden de los manejadores afecta el comportamiento, lo que puede llevar a errores si no se define correctamente. |
+| **Falta de garantía de manejo**    | No hay certeza de que la solicitud será procesada si ningún manejador es capaz de hacerlo.                   |
+
+-------------
