@@ -11,7 +11,6 @@ El patrón de diseño cadena de responsabilidad es un patrón de comportamiento 
 ## ¿Cómo traducimos esta definición?
 Básicamente, este patrón ayuda a encapsular acciones secuenciales sobre un objeto. Por ejemplo, en un sistema de pedidos donde hay que realizar una secuencia de pasos para una determinada acción. Un caso que se me ocurre es el de realizar un proceso de scoring sobre un pedido que puede partirse en distintos pasos.
 
-------------------- 
 ![Chain of Responsability](https://refactoring.guru/images/patterns/diagrams/chain-of-responsibility/solution1-es.png?id=122092268f688aa2015b2f20dabafb89)
 
 ------------------- 
@@ -27,5 +26,104 @@ Básicamente, este patrón ayuda a encapsular acciones secuenciales sobre un obj
 3. Flexibilidad:
     * Se pueden añadir nuevos manejadores a la cadena sin afectar a los demás.
 
+# Ventajas.
+| **Ventaja**                                  | **Descripción**                                                                 |
+|----------------------------------------------|---------------------------------------------------------------------------------|
+| **Desacoplamiento**                          | El emisor de la solicitud no necesita conocer los detalles de los manejadores.  |
+| **Extensibilidad**                           | Es fácil agregar nuevos manejadores sin modificar la estructura existente.      |
+| **Reutilización**                            | Los manejadores pueden ser reutilizados en diferentes cadenas o sistemas.       |
+| **Flexibilidad en el manejo de solicitudes** | La solicitud puede ser manejada por uno o más manejadores dependiendo de la lógica. |
+| **Responsabilidad distribuida**              | Divide la responsabilidad entre varios objetos en lugar de asignarla a uno solo.|
+
+# Desventajas.
+| **Desventaja**                     | **Descripción**                                                                                              |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Dificultad para depurar**        | Es complicado rastrear qué manejador procesó una solicitud en cadenas largas o complejas.                    |
+| **Posible bajo rendimiento**       | Si la cadena es muy extensa, se pueden generar múltiples llamadas innecesarias antes de procesar la solicitud.|
+| **Orden estricto**                 | El orden de los manejadores afecta el comportamiento, lo que puede llevar a errores si no se define correctamente. |
+| **Falta de garantía de manejo**    | No hay certeza de que la solicitud será procesada si ningún manejador es capaz de hacerlo.                   |
+
+
+-------
 # implementación:
 El primer paso siempre es identificar al handler, implementando una clase abstracta con los métodos que requiera para el caso de uso. En mi caso aplicar el filtro y un método que identifique si ese handler debe ser ejecutado en función de los filtros activos por el usuario. A continuación la clase abstracta AbstractFilterHandler implementada:
+
+------------------
+# Código de implementación:
+~~~ 
+class AbstractFilterHandler {
+  constructor() {}
+applyFilter() {
+    this._WARNING("applyFilter(elements, filters)");
+  }
+canIHandle() {
+    this._WARNING("canIHandle(elements, filters)");
+  }
+_WARNING(fName = "unknown method") {
+    console.warn('WARNING! Function "' + fName + '" is not overridden in ' + this.constructor.name);
+  }
+}
+export default AbstractFilterHandler;
+~~~
+
+Una vez tenemos la clase abstracta debemos de implantar cada manejador específico. Para este artículo vamos a mostrar el ejemplo del manejador que filtra aquellos elementos que incluyen ciertos modelos:
+
+~~~
+import AbstractFilterHandler from "./filter";
+class ModelsFilterHandler extends AbstractFilterHandler {
+  applyFilter(elements, filters) {
+    return elements.filter(a => filters.models.includes(a.model.slug));
+  }
+canIHandle(filters) {
+    return filters.models && filters.models.length > 0;
+  }
+}
+export default ModelsFilterHandler;
+~~~
+Como vemos en la implementación, en el método canIHandle() indicamos que el handler solo se invocará cuando en los filtros contengan modelos. Por otro lado el método applyFilter() implementa la acción realizada sobre los elementos.
+
+El siguiente paso es el de construir la cadena que se encarga de ejecutar el filtrado sobre los elementos y dar de alta los manejadores específicos. Para ello hemos creado la clase FilterChain:
+
+~~~
+import * as Handlers from "./filters";
+ 
+class FilterChain {
+  constructor(elements, filters) {
+    this.elements = elements;
+    this.filters = filters;
+    this.handlers = [];
+  }
+ 
+  /**
+   *
+   * @param {AbstractFilterHandler} filter
+   */
+  addHandler(handler) {
+    this.handlers.push(handler);
+  }
+ 
+  applyFilters() {
+    let elements = this.elements;
+    this.handlers.forEach(handler => {
+      if (handler.canIHandle(this.filters)) {
+        elements = handler.applyFilter(elements, this.filters);
+      }
+    });
+ 
+    return elements;
+  }
+}
+export default FilterChain;
+~~~
+
+Como vemos, esta clase se encarga de recibir los elementos sobre los que se realizan la acción, el contexto de los filtros activos por el usuario y los manejadores que deben de ejecutarse. El método applyFilters() será el punto de entrada para la ejecución de la cadena.
+
+Para ejecutar el patrón en nuestro código simplemente tenemos que dar de alta el Chain y sus Handlers y llamar al método applyFilters:
+
+~~~
+let chain = new FilterChain(elements, filters);
+chain.addHandler(new Handlers.ModelsFilterHandler());
+chain.addHandler(new Handlers.OrderByPriceFilterHandler());
+let result = handler.applyFilters(elements, filters);
+~~~
+Con estos sencillos pasos, hemos abstraído cada lógica de filtrado/ordenando en una clase distinta, evitando un código acoplado y sin una responsabilidad clara.
