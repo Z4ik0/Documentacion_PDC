@@ -29,3 +29,12 @@ El definir una interfaz común para todos los comandos se complica si queremos s
 3. Deshacer/rehacer: 
     * Se puede implementar la funcionalidad de deshacer y rehacer las operaciones de forma sencilla.
 
+
+## Ventajas.
+
+| **Ventaja**                          | **Descripción**                                                                                      |
+|--------------------------------------|------------------------------------------------------------------------------------------------------|
+| **Desacoplamiento**                  | El emisor de la solicitud no necesita conocer los detalles de los objetos que procesan la solicitud. |
+| **Extensibilidad**                   | Es fácil agregar nuevos manejadores a la cadena sin modificar los existentes.                        |
+| **Flexibilidad en el procesamiento** | Permite modificar dinámicamente el orden de los manejadores o la cadena de responsabilidad.          |
+| **Reutilización**                    | Los manejadores individuales pueden ser reutilizados en diferentes cadenas o contextos.              |
