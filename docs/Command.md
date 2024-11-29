@@ -163,3 +163,6 @@ final class UserController
     }
 }
 ~~~
+
+## Analogía:
+Piensa en un mando a distancia para un televisor. Cada botón del control remoto es un comando. Cuando presionas un botón, envías un comando al televisor para realizar una acción (encender, apagar, cambiar canal, etc.). Tú como usuario no necesitas saber cómo el televisor ejecuta el comando, solo lo envías.
