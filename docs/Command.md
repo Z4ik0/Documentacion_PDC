@@ -6,6 +6,9 @@ El patrón Command encapsula una solicitud como un objeto, permitiendo que se pa
 ## Proposito.
 El propósito principal de este patrón es permitir que las solicitudes sean representadas como objetos, de forma que se pueda parametrizar las acciones a realizar, almacenarlas, ejecutar operaciones en momentos posteriores y realizar deshacer (undo).
 
+![](https://refactoring.guru/images/patterns/content/command/command-es.png)
+
+
 ### Los actores principales en este patrón son:
 
 1. **Cliente/Invoker.**
@@ -52,6 +55,10 @@ El definir una interfaz común para todos los comandos se complica si queremos s
 | **Falta de garantía de manejo**    | No hay certeza de que la solicitud será procesada si ningún manejador es capaz de hacerlo.                   |
 
 -------------
+## Estructura de Command
+![](https://refactoring.guru/images/patterns/diagrams/command/structure.png)
+
+-----------
 ## Implementación.
 Una implementación del ejemplo anterior podría ser:
 
@@ -168,4 +175,8 @@ final class UserController
 ~~~
 
 ## Analogía:
-Piensa en un mando a distancia para un televisor. Cada botón del control remoto es un comando. Cuando presionas un botón, envías un comando al televisor para realizar una acción (encender, apagar, cambiar canal, etc.). Tú como usuario no necesitas saber cómo el televisor ejecuta el comando, solo lo envías.
+Tras un largo paseo por la ciudad, entras en un buen restaurante y te sientas a una mesa junto a la ventana. Un amable camarero se acerca y toma tu pedido rápidamente, apuntándolo en un papel. El camarero se va a la cocina y pega el pedido a la pared. Al cabo de un rato, el pedido llega al chef, que lo lee y prepara la comida. El cocinero coloca la comida en una bandeja junto al pedido. El camarero descubre la bandeja, comprueba el pedido para asegurarse de que todo está como lo querías, y lo lleva todo a tu mesa.
+
+![](https://refactoring.guru/images/patterns/content/command/command-comic-1.png)
+
+El pedido en papel hace la función de un comando. Permanece en una cola hasta que el chef está listo para servirlo. Este pedido contiene toda la información relevante necesaria para preparar la comida. Permite al chef empezar a cocinar de inmediato, en lugar de tener que correr de un lado a otro aclarando los detalles del pedido directamente contigo.
