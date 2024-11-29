@@ -15,6 +15,9 @@ El propósito principal de este patrón es permitir que las solicitudes sean rep
 3. **CommandHandler/Handler.**
     * Es la clase que contiene la lógica a ejecutar, puede tener dependencias externas, como servicios de mensajería, conexiones a base de datos, servicios para escribir en logs… etc. Es importante que esta clase ejecute una y solo una acción, ya que en caso contrario resultaría muy confusa su nomenclatura.
 
+--------
+### Diagrama del patron de diseño Command.
+![Command](https://reactiveprogramming.io/_next/image?url=%2Fbooks%2Fpatterns%2Fimg%2Fpatterns%2Fcommand2.png&w=3840&q=75)
 Por convención, todos los handlers deberían de tener un método conocido para ejecutar los comandos, como: **handle, execute, do…** o en el caso de PHP usar el magic method **__invoke.**
 
 El definir una interfaz común para todos los comandos se complica si queremos sacar partido del type hinting para asegurar que nuestro handler solo ejecute comandos del tipo adecuado. Una opción es que todos los comandos implementen una interfaz Command y que todos los manejadores implementen una interfaz CommandHandler, con un método execute(Command $command o handle(Command $command) y dentro del mismo ejecutar la comprobación de que es la clase adecuada.
