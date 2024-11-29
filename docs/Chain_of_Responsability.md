@@ -6,6 +6,8 @@ Chain of Responsibility es un patrón de diseño de comportamiento que te permit
 
 El patrón de diseño cadena de responsabilidad es un patrón de comportamiento que evita acoplar el emisor de una petición a su receptor dando a más de un objeto la posibilidad de responder a una petición. Para ello, se encadenan los receptores y pasa la petición a través de la cadena hasta que es procesada por algún objeto. Este patrón es utilizado a menudo en el contexto de las interfaces gráficas de usuario donde un objeto puede estar compuesto de varios objetos (que generalmente heredan de una super clase "vista"). No se debe confundir con el patrón Composite (patrón de diseño) que se basa en un concepto similar.
 
+![chain](https://refactoring.guru/images/patterns/content/chain-of-responsibility/chain-of-responsibility.png)
+
 ---------------------
 ## ¿Cómo traducimos esta definición?
 
@@ -27,6 +29,11 @@ Permitir que una solicitud pase a través de una cadena de objetos receptores ha
 
 3. Flexibilidad:
     * Se pueden añadir nuevos manejadores a la cadena sin afectar a los demás.
+----------
+
+## Estructura.
+
+![chain](https://refactoring.guru/images/patterns/diagrams/chain-of-responsibility/structure.png)
 
 ------------------------
 ## Ventajas.
@@ -134,4 +141,12 @@ Con estos sencillos pasos, hemos abstraído cada lógica de filtrado/ordenando e
 -----------
 
 ## Analogía:
-Imagina una línea de atención al cliente en una empresa. Si un cliente tiene una consulta, empieza hablando con el primer agente disponible. Si el primer agente no puede resolver el problema, lo deriva al siguiente agente. Este proceso continúa hasta que alguien pueda resolver la consulta, o hasta que el cliente se quede sin opciones.
+Acabas de comprar e instalar una nueva pieza de hardware en tu computadora. Como eres un fanático de la informática, la computadora tiene varios sistemas operativos instalados. Intentas arrancarlos todos para ver si soportan el hardware. Windows detecta y habilita el hardware automáticamente. Sin embargo, tu querido Linux se niega a funcionar con el nuevo hardware. Ligeramente esperanzado, decides llamar al número de teléfono de soporte técnico escrito en la caja.
+
+Lo primero que oyes es la voz robótica del contestador automático. Te sugiere nueve soluciones populares a varios problemas, pero ninguna de ellas es relevante a tu caso. Después de un rato, el robot te conecta con un operador humano.
+
+![chain](https://refactoring.guru/images/patterns/content/chain-of-responsibility/chain-of-responsibility-comic-1-es.png)
+
+Por desgracia, el operador tampoco consigue sugerirte nada específico. Se dedica a recitar largos pasajes del manual, negándose a escuchar tus comentarios. Cuando escuchas por enésima vez la frase “¿has intentado apagar y encender la computadora?”, exiges que te pasen con un ingeniero de verdad.
+
+Por fin, el operador pasa tu llamada a unos de los ingenieros, que probablemente ansiaba una conversación humana desde hacía tiempo, sentado en la solitaria sala del servidor del oscuro sótano de un edificio de oficinas. El ingeniero te indica dónde descargar los drivers adecuados para tu nuevo hardware y cómo instalarlos en Linux. Por fin, ¡la solución! Acabas la llamada dando saltos de alegría.
