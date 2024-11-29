@@ -29,6 +29,7 @@ Todos los iteradores deben implementar la misma interfaz. Esto hace que el códi
 
 ---------
 ## Ventajas.
+
 | **Ventaja**                          | **Descripción**                                                                                      |
 |--------------------------------------|------------------------------------------------------------------------------------------------------|
 | **Abstracción del recorrido**        | Permite recorrer una colección sin exponer su estructura interna.                                   |
@@ -36,4 +37,14 @@ Todos los iteradores deben implementar la misma interfaz. Esto hace que el códi
 | **Simplificación del código cliente**| Reduce la complejidad del código que interactúa con las colecciones.                                |
 | **Separación de responsabilidades** | Separa la lógica de iteración de la colección misma, promoviendo un diseño más limpio.              |
 | **Reutilización**                    | Los iteradores pueden ser reutilizados en diferentes contextos sin modificar la colección.          |
+
+## Desventajas.
+
+| **Desventaja**                     | **Descripción**                                                                                              |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Sobrecarga de objetos**          | Puede aumentar la cantidad de objetos en memoria al crear instancias de iteradores.                         |
+| **Complejidad en iteradores complejos** | La implementación de iteradores para estructuras de datos complejas puede ser difícil.                     |
+| **Falta de control bidireccional** | Algunos iteradores básicos no permiten navegar hacia atrás en la colección.                                |
+| **Dependencia de la colección**    | Aunque el iterador abstrae el recorrido, sigue dependiendo de la estructura de la colección para funcionar. |
+-----------
 
