@@ -17,4 +17,23 @@ El patrón Iterator permite recorrer una colección (como un álbum de fotos) si
 
 3. El mismo código de iteración se puede usar para diferentes colecciones.
 ---------
+La idea central del patrón Iterator es extraer el comportamiento de recorrido de una colección y colocarlo en un objeto independiente llamado iterador.
+
+![Diagrama de Iterator](https://refactoring.guru/images/patterns/diagrams/iterator/solution1.png?id=2f5fbcce6099d8ea09b2fbb83e3e7059)
+
+Además de implementar el propio algoritmo, un objeto iterador encapsula todos los detalles del recorrido, como la posición actual y cuántos elementos quedan hasta el final. Debido a esto, varios iteradores pueden recorrer la misma colección al mismo tiempo, independientemente los unos de los otros.
+
+Normalmente, los iteradores aportan un método principal para extraer elementos de la colección. El cliente puede continuar ejecutando este método hasta que no devuelva nada, lo que significa que el iterador ha recorrido todos los elementos.
+
+Todos los iteradores deben implementar la misma interfaz. Esto hace que el código cliente sea compatible con cualquier tipo de colección o cualquier algoritmo de recorrido, siempre y cuando exista un iterador adecuado. Si necesitas una forma particular de recorrer una colección, creas una nueva clase iteradora sin tener que cambiar la colección o el cliente.
+
+---------
+## Ventajas.
+| **Ventaja**                          | **Descripción**                                                                                      |
+|--------------------------------------|------------------------------------------------------------------------------------------------------|
+| **Abstracción del recorrido**        | Permite recorrer una colección sin exponer su estructura interna.                                   |
+| **Compatibilidad con diferentes colecciones** | Facilita trabajar con diferentes tipos de colecciones de manera uniforme.                          |
+| **Simplificación del código cliente**| Reduce la complejidad del código que interactúa con las colecciones.                                |
+| **Separación de responsabilidades** | Separa la lógica de iteración de la colección misma, promoviendo un diseño más limpio.              |
+| **Reutilización**                    | Los iteradores pueden ser reutilizados en diferentes contextos sin modificar la colección.          |
 
