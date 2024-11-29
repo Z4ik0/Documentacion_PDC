@@ -130,3 +130,9 @@ chain.addHandler(new Handlers.OrderByPriceFilterHandler());
 let result = handler.applyFilters(elements, filters);
 ~~~
 Con estos sencillos pasos, hemos abstraído cada lógica de filtrado/ordenando en una clase distinta, evitando un código acoplado y sin una responsabilidad clara.
+
+-----------
+
+## Analogía:
+Imagina una línea de atención al cliente en una empresa. Si un cliente tiene una consulta, empieza hablando con el primer agente disponible. Si el primer agente no puede resolver el problema, lo deriva al siguiente agente. Este proceso continúa hasta que alguien pueda resolver la consulta, o hasta que el cliente se quede sin opciones.
+Propósito: En este patrón, una solicitud se pasa de un objeto a otro en una cadena, y cada uno de ellos decide si puede manejarla o pasarla al siguiente.
