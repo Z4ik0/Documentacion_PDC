@@ -49,3 +49,117 @@ El definir una interfaz común para todos los comandos se complica si queremos s
 | **Falta de garantía de manejo**    | No hay certeza de que la solicitud será procesada si ningún manejador es capaz de hacerlo.                   |
 
 -------------
+## Implementación.
+Una implementación del ejemplo anterior podría ser:
+
+~~~
+<?php
+
+namespace Api\Command\User;
+
+final class RegisterUserCommand
+{
+    private $email;
+    private $password;
+    
+    public function __construct(string $email, string $password)
+    {
+        $this->email = $email;
+        $this->password = $password;
+    }
+    
+    public function email(): string
+    {
+        return $this->email;   
+    }
+    
+    
+    public function password(): string
+    {
+        return $this->password;   
+    }
+}
+~~~
+~~~
+<?php
+
+namespace Api\CommandHandler\User;
+
+use Api\Command\User\RegisterUserCommand;
+use Api\Domain\Repository\UserRepository;
+use Api\Entity\User;
+
+final class RegisterUserHandler
+{
+    const MINIMUM_LENGHT = 12;
+    
+    private $repository;
+    
+    public function __construct (UserRepository $repository)
+    {
+        $this->repository = $repository;   
+    }
+    
+    public function __invoke(RegisterUserCommand $command)
+    {
+        $email = $command->email();
+        $password = $command->password();
+        
+        $this->checkEmail();
+        $this->checkPassword();
+        
+        $user = new User($email, $password);
+        $this->repository->save($user);
+    }
+    
+    private function checkEmail($email)
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new \Exception('Invalid email');
+        }
+        
+        if ($this->repository->userExists($email)) {
+            throw new \Exception('User already exist');
+        }
+    }
+    
+    private function checkPassword($password)
+    {
+        if (self::MINIMUM_LENGHT > strlen($password)) {
+            throw new \Exception('Password too short');
+        }
+    }
+}
+~~~
+~~~
+<?php
+
+namespace Api\Controller\User;
+
+use Api\Command\User\RegisterUserCommand;
+use Api\CommandHandler\User\RegisterUserHandler;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+final class UserController
+{
+    public function registerUser(Request $request): Response
+    {
+        $email = $request->request->get('email');
+        $password = $request->request->get('password');
+        
+        $command = new RegisterUserCommand($email, $password);
+        
+        $userRepository = $this->get('repository.user');
+        $handler = new RegisterUserHandler($userRepository);
+        
+        try {
+            $handler($command);
+        } catch (\Exception $e) {
+            return new Response($e->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
+        
+        return new Response('', Response::HTTP_CREATED);
+    }
+}
+~~~
