@@ -103,4 +103,10 @@ print("\n")
 game2 = Chess()
 game2.play()
 ```
+## Analogía
 
+El enfoque del método plantilla puede emplearse en la construcción de viviendas en masa. El plan arquitectónico para construir una casa estándar puede contener varios puntos de extensión que permitirán a un potencial propietario ajustar algunos detalles de la casa resultante.
+
+Cada paso de la construcción, como colocar los cimientos, el armazón, construir las paredes, instalar las tuberías para el agua y el cableado para la electricidad, etc., puede cambiarse ligeramente para que la casa resultante sea un poco diferente de las demás.
+
+![Template Method ilustración sobre analogia](https://refactoring.guru/images/patterns/diagrams/template-method/live-example.png)
