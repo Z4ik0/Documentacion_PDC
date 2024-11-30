@@ -10,7 +10,7 @@ El propósito de Template Method es reutilizar el código común y definir los p
 
 ![Patron Template Method](https://refactoring.guru/images/patterns/content/template-method/template-method.png)
 
-## Caracteristicas principales
+## Características principales
 
 * **Definición de un esqueleto fijo:**
 
@@ -21,7 +21,7 @@ El propósito de Template Method es reutilizar el código común y definir los p
     El patrón utiliza una combinación de:
 
     * Métodos abstractos: Son definidos en la clase base, pero su implementación está delegada a las subclases. Esto permite que las subclases personalicen esos pasos específicos del algoritmo.
-    
+
     * Métodos concretos (opcional): Pueden estar completamente implementados en la clase base y ser reutilizados por las subclases, evitando duplicación de código.
 
 * **Inmutabilidad del flujo:**
@@ -39,3 +39,12 @@ El propósito de Template Method es reutilizar el código común y definir los p
 * **Uso de métodos opcionales (hooks):**
 
     El patrón puede incluir hooks o métodos opcionales en la clase base. Los hooks son métodos vacíos o con una implementación predeterminada que las subclases pueden sobrescribir para agregar comportamiento adicional, pero no están obligadas a hacerlo.
+
+## Ventajas y Desventajas 
+
+Venajas | Desventajas
+-------- | -----------
+Permite reutilizar el código común en la clase base.| Puede volverse rígido si el algoritmo necesita cambios frecuentes en su estructura general.
+Facilita la extensión del comportamiento mediante subclases.| Obliga a que las subclases dependan de la clase base, creando acoplamiento.
+Simplifica el mantenimiento al centralizar el flujo del algoritmo.| Puede ser difícil de entender si hay demasiadas subclases con diferentes implementaciones.
+Garantiza un flujo uniforme para todas las subclases.| El abuso del patrón puede llevar a jerarquías de clases innecesariamente complejas.
