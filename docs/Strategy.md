@@ -49,3 +49,46 @@ Permite agregar nuevas estrategias sin modificar el código cliente.| Puede aume
 Promueve el cumplimiento del principio SOLID, especialmente el abierto/cerrado.| Requiere que el cliente tenga conocimiento de las estrategias disponibles.
 Facilita pruebas unitarias al permitir el uso de estrategias independientes.| Puede implicar una sobrecarga de memoria y procesamiento al manejar muchas instancias de estrategias.
 Permite elegir la estrategia en tiempo de ejecución.|Si no se implementa correctamente, puede ser confuso para desarrolladores nuevos en el proyecto.
+
+## Ejemplo de codigo en Python 
+```python
+from abc import ABC, abstractmethod
+
+# Interfaz de estrategia
+class PaymentStrategy(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+# Estrategias concretas
+class CreditCardPayment(PaymentStrategy):
+    def pay(self, amount):
+        return f"Paid {amount} using Credit Card."
+
+class PayPalPayment(PaymentStrategy):
+    def pay(self, amount):
+        return f"Paid {amount} using PayPal."
+
+class BitcoinPayment(PaymentStrategy):
+    def pay(self, amount):
+        return f"Paid {amount} using Bitcoin."
+
+# Contexto que utiliza las estrategias
+class ShoppingCart:
+    def __init__(self, payment_strategy: PaymentStrategy):
+        self.payment_strategy = payment_strategy
+
+    def checkout(self, amount):
+        return self.payment_strategy.pay(amount)
+
+# Uso del patrón
+cart1 = ShoppingCart(CreditCardPayment())
+print(cart1.checkout(100))  # Output: Paid 100 using Credit Card.
+
+cart2 = ShoppingCart(PayPalPayment())
+print(cart2.checkout(250))  # Output: Paid 250 using PayPal.
+
+cart3 = ShoppingCart(BitcoinPayment())
+print(cart3.checkout(500))  # Output: Paid 500 using Bitcoin.
+
+```
