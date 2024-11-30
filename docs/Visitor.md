@@ -42,3 +42,48 @@ Facilita la adición de nuevas operaciones sin modificar las clases base.| Intro
 Separa la lógica de operaciones de la estructura de objetos.| Puede ser difícil de mantener si se agrega una nueva clase en la jerarquía de objetos.
 Promueve la organización del código al mover algoritmos fuera de las clases.| Si las clases cambian frecuentemente, se requiere actualizar todos los visitantes.
 Permite manejar diferentes tipos de objetos de manera uniforme.| No es ideal si la jerarquía de clases cambia más frecuentemente que las operaciones.
+
+## Ejemplo de código en Python
+```python
+from abc import ABC, abstractmethod
+
+# Elemento base que acepta un visitante
+class Shape(ABC):
+    @abstractmethod
+    def accept(self, visitor):
+        pass
+
+# Subclases concretas
+class Circle(Shape):
+    def accept(self, visitor):
+        visitor.visit_circle(self)
+
+class Square(Shape):
+    def accept(self, visitor):
+        visitor.visit_square(self)
+
+# Visitante base
+class Visitor(ABC):
+    @abstractmethod
+    def visit_circle(self, circle):
+        pass
+
+    @abstractmethod
+    def visit_square(self, square):
+        pass
+
+# Visitante concreto
+class AreaCalculator(Visitor):
+    def visit_circle(self, circle):
+        print("Calculating area of the circle.")
+    
+    def visit_square(self, square):
+        print("Calculating area of the square.")
+
+# Uso del patrón
+shapes = [Circle(), Square()]
+visitor = AreaCalculator()
+
+for shape in shapes:
+    shape.accept(visitor)
+```
