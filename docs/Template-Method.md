@@ -48,3 +48,59 @@ Permite reutilizar el código común en la clase base.| Puede volverse rígido s
 Facilita la extensión del comportamiento mediante subclases.| Obliga a que las subclases dependan de la clase base, creando acoplamiento.
 Simplifica el mantenimiento al centralizar el flujo del algoritmo.| Puede ser difícil de entender si hay demasiadas subclases con diferentes implementaciones.
 Garantiza un flujo uniforme para todas las subclases.| El abuso del patrón puede llevar a jerarquías de clases innecesariamente complejas.
+
+## Ejemplo de código en Python
+```python
+from abc import ABC, abstractmethod
+
+# Clase base que define el método plantilla
+class Game(ABC):
+    def play(self):
+        self.initialize()
+        self.start_play()
+        self.end_play()
+
+    @abstractmethod
+    def initialize(self):
+        pass
+
+    @abstractmethod
+    def start_play(self):
+        pass
+
+    @abstractmethod
+    def end_play(self):
+        pass
+
+# Subclase concreta 1
+class Football(Game):
+    def initialize(self):
+        print("Football Game Initialized. Ready to start.")
+    
+    def start_play(self):
+        print("Football Game Started. Enjoy the game!")
+    
+    def end_play(self):
+        print("Football Game Finished.")
+
+# Subclase concreta 2
+class Chess(Game):
+    def initialize(self):
+        print("Chess Game Initialized. Get your mind ready.")
+    
+    def start_play(self):
+        print("Chess Game Started. Good luck!")
+    
+    def end_play(self):
+        print("Chess Game Finished.")
+
+# Uso del patrón
+game1 = Football()
+game1.play()
+
+print("\n")
+
+game2 = Chess()
+game2.play()
+```
+
