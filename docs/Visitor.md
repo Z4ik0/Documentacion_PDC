@@ -87,3 +87,13 @@ visitor = AreaCalculator()
 for shape in shapes:
     shape.accept(visitor)
 ```
+
+## Analogía 
+
+Imagina un experimentado agente de seguros que está deseoso de conseguir nuevos clientes. Puede visitar todos los edificios de un barrio, intentando vender seguros a todo aquel que se va encontrando. Dependiendo del tipo de organización que ocupe el edificio, puede ofrecer pólizas de seguro especializadas:
+
+* Si es un edificio residencial, vende seguros médicos.
+* Si es un banco, vende seguros contra robos.
+* Si es una cafetería, vende seguros contra incendios e inundaciones.
+
+![Ilustración de Analogía Visitor](https://refactoring.guru/images/patterns/content/visitor/visitor-comic-1.png)
