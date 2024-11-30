@@ -92,3 +92,8 @@ cart3 = ShoppingCart(BitcoinPayment())
 print(cart3.checkout(500))  # Output: Paid 500 using Bitcoin.
 
 ```
+
+## Analogía
+Imagina que tienes que llegar al aeropuerto. Puedes tomar el autobús, pedir un taxi o ir en bicicleta. Éstas son tus estrategias de transporte. Puedes elegir una de las estrategias, dependiendo de factores como el presupuesto o los límites de tiempo.
+
+![imagen de analogía: Strategy](https://refactoring.guru/images/patterns/content/strategy/strategy-comic-1-es.png?id=1cf442d8c2d5d78f214499bb72dfdc72)
