@@ -33,3 +33,12 @@ El propósito de Visitor es agregar nuevas funcionalidades a una jerarquía de c
 * **Acoplamiento**
     
     El patrón introduce un alto acoplamiento entre el visitante y la jerarquía de clases, ya que el visitante debe conocer los detalles de cada clase para operar correctamente
+
+## Ventajas y Desventajas
+
+Ventajas | Desventajas
+---------|------------
+Facilita la adición de nuevas operaciones sin modificar las clases base.| Introduce un alto acoplamiento entre el visitante y las clases.
+Separa la lógica de operaciones de la estructura de objetos.| Puede ser difícil de mantener si se agrega una nueva clase en la jerarquía de objetos.
+Promueve la organización del código al mover algoritmos fuera de las clases.| Si las clases cambian frecuentemente, se requiere actualizar todos los visitantes.
+Permite manejar diferentes tipos de objetos de manera uniforme.| No es ideal si la jerarquía de clases cambia más frecuentemente que las operaciones.
