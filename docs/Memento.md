@@ -1,8 +1,15 @@
+---
+sidebar_position: 6
+---
+
 # Memento
 
 ---
+## Definicion
 
 _Es un patrón de comportamiento que permite capturar y guardar el estado interno de un objeto sin violar su encapsulamiento, para que posteriormente se pueda restaurar a ese estado, es útil para implementar operaciones de deshacer undo y rehacer redo en aplicaciones_
+
+![Memento](https://refactoring.guru/images/patterns/content/memento/memento-es.png?id=425d7fafd404116e99e93c3d8a04ec89)
 
 ---
 
@@ -33,7 +40,7 @@ _Es un patrón de comportamiento que permite capturar y guardar el estado intern
    - Solo el Originator sabe cómo guardar y restaurar su estado desde un Memento.
 ---
 
-### Ventajas y Desventajas
+## Ventajas y Desventajas
 
 | **Ventajas** | **Desventajas** |
 |--------------|--------------|
@@ -47,4 +54,36 @@ _Es un patrón de comportamiento que permite capturar y guardar el estado intern
 
 #### Ejemplo de Uso en Codigo
 
-``
+``` java
+class Memento {
+    private final String state;
+    Memento(String state) { this.state = state; }
+    String getState() { return state; }
+}
+
+class TextEditor {
+    private String content;
+    void setContent(String content) { this.content = content; }
+    String getContent() { return content; }
+    Memento save() { return new Memento(content); }
+    void restore(Memento m) { content = m.getState(); }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        TextEditor editor = new TextEditor();
+        Memento saved;
+
+        editor.setContent("Hola, mundo.");
+        System.out.println("Estado actual: " + editor.getContent());
+
+        saved = editor.save();
+
+        editor.setContent("Texto modificado.");
+        System.out.println("Estado modificado: " + editor.getContent());
+
+        editor.restore(saved); 
+        System.out.println("Estado restaurado: " + editor.getContent());
+    }
+}
+

@@ -1,8 +1,15 @@
+---
+sidebar_position: 7
+---
+
 # Observer
 
 ---
+## Definicion
 
 _Es un patrón de comportamiento que establece una relación de dependencias entre objetos, de modo que cuando el estado de un objeto (el sujeto o subject) cambia, todos sus objetos dependientes_
+
+![Observer](https://www.researchgate.net/publication/260837549/figure/fig1/AS:350021175267328@1460462959197/Ejemplo-del-patron-Observer-En-la-figura-2-se-muestra-el-flujo-de-trabajo-de-los.png)
 
 ---
 
@@ -28,7 +35,7 @@ _Es un patrón de comportamiento que establece una relación de dependencias ent
    - Los observadores no necesitan conocer a otros observadores ni compartir datos entre sí. Cada observador actúa de manera independiente en función de la notificación que recibe.
 ---
 
-### Ventajas y Desventajas
+## Ventajas y Desventajas
 
 | **Ventajas** | **Desventajas** |
 |--------------|--------------|
@@ -42,4 +49,44 @@ _Es un patrón de comportamiento que establece una relación de dependencias ent
 
 #### Ejemplo de Uso en Codigo
 
-``
+``` java
+import java.util.ArrayList;
+import java.util.List;
+
+interface Observer {
+    void update(float temperature);
+}
+
+class WeatherStation {
+    private List<Observer> observers = new ArrayList<>();
+    private float temperature;
+
+    void registerObserver(Observer observer) { observers.add(observer); }
+    void removeObserver(Observer observer) { observers.remove(observer); }
+
+    void setTemperature(float temperature) {
+        this.temperature = temperature;
+        for (Observer observer : observers) {
+            observer.update(temperature);
+        }
+    }
+}
+
+class WeatherApp implements Observer {
+    @Override
+    public void update(float temperature) {
+        System.out.println("WeatherApp: Temperatura actual: " + temperature + "°C");
+    }
+}
+
+public class ObserverPatternExample {
+    public static void main(String[] args) {
+        WeatherStation station = new WeatherStation();
+        WeatherApp app = new WeatherApp();
+
+        station.registerObserver(app);
+        station.setTemperature(25.5f);
+        station.setTemperature(30.0f);
+    }
+}
+
