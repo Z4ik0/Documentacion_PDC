@@ -14,3 +14,17 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 
 --------
 
+
+## Características Principales
+1. **Centralización:**
+    * Todas las interacciones entre los objetos pasan por un mediador central.
+
+2. **Desacoplamiento:**
+    * Los objetos no necesitan conocer los detalles de otros objetos con los que interactúan.
+
+3. **Coordinación Simplificada:**
+    * El mediador se encarga de manejar la lógica de interacción entre los objetos.
+
+4. **Mantenibilidad Mejorada:**
+    * Cambios en un objeto o en las interacciones no afectan directamente a otros objetos.
+------
