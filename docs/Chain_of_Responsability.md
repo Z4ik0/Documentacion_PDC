@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# chain of responsability
+# chain of responsability.
 
 ## Definición
 
