@@ -7,7 +7,7 @@ sidebar_position: 6
 ---
 ## Definicion
 
-_Es un patrón de comportamiento que permite capturar y guardar el estado interno de un objeto sin violar su encapsulamiento, para que posteriormente se pueda restaurar a ese estado, es útil para implementar operaciones de deshacer undo y rehacer redo en aplicaciones_
+_Es un patrón de diseño de comportamiento que permite almacenar el estado interno de un objeto en un contenedor independiente llamado memento, este contenedor encapsula los detalles del estado sin exponer la implementación interna del objeto original_
 
 ![Memento](https://refactoring.guru/images/patterns/content/memento/memento-es.png?id=425d7fafd404116e99e93c3d8a04ec89)
 
