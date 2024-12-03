@@ -49,6 +49,7 @@ _Es un patrón de diseño de comportamiento que permite almacenar el estado inte
 | Separación de responsabilidades    |  Complejidad adicional  |
 | Fácil de extender    | Manejo de estados complejos   |
 | Reutilización de lógica    | No es adecuado para sistemas con estados dependientes   |
+| No afecta la estructura del objeto    | Problemas de sincronización   |
 
 ---
 
