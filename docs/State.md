@@ -17,6 +17,7 @@ _Es un patrón de diseño de comportamiento que permite a un objeto cambiar su c
 
 1. **_Permitir a un objeto alterar su comportamiento_**
    - Cuando su estado interno cambie, parecera como si el objeto cambiara su clase.
+   - Permite a un objeto alterar su comportamiento cuando su estado interno cambia.
 
 ---
 
