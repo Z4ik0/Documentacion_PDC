@@ -9,7 +9,7 @@ sidebar_position: 7
 
 _Es un patrón de comportamiento que establece una relación de dependencias entre objetos, de modo que cuando el estado de un objeto (el sujeto o subject) cambia, todos sus objetos dependientes_
 
-![Observer](https://www.researchgate.net/publication/260837549/figure/fig1/AS:350021175267328@1460462959197/Ejemplo-del-patron-Observer-En-la-figura-2-se-muestra-el-flujo-de-trabajo-de-los.png)
+![Observer](https://refactoring.guru/images/patterns/content/observer/observer-comic-1-pt-br.png?id=adfe141b54d9d26143d611158896597b)
 
 ---
 
