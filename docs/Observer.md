@@ -47,15 +47,6 @@ _Es un patrón de comportamiento que establece una relación de dependencias ent
 
 ---
 
-## Analogia
-
-Un presentador de televisión realiza anuncios en vivo, cada miembro de la audiencia, al estar sintonizado, recibe las actualizaciones en tiempo real, si alguien cambia de canal, deja de recibir los mensajes, de igual forma, nuevos espectadores que sintonizan el programa comienzan a recibir las notificaciones automáticamente.
-
-1. Un sujeto notifica automáticamente a todos los observadores suscritos cuando ocurre un cambio, y estos pueden suscribirse o retirarse en cualquier momento.
-
-
----
-
 ## Ejemplo de Uso en Codigo
 
 ``` java
@@ -98,4 +89,11 @@ public class ObserverPatternExample {
         station.setTemperature(30.0f);
     }
 }
+```
+---
 
+## Analogia
+
+Un presentador de televisión realiza anuncios en vivo, cada miembro de la audiencia, al estar sintonizado, recibe las actualizaciones en tiempo real, si alguien cambia de canal, deja de recibir los mensajes, de igual forma, nuevos espectadores que sintonizan el programa comienzan a recibir las notificaciones automáticamente.
+
+1. Un sujeto notifica automáticamente a todos los observadores suscritos cuando ocurre un cambio, y estos pueden suscribirse o retirarse en cualquier momento.
