@@ -49,24 +49,6 @@ _Es un patrón de diseño de comportamiento que permite a un objeto cambiar su c
 
 ---
 
-## Analogia
-
-En un videojuego, un personaje puede cambiar entre diferentes modos, normal, invisible y enojado, en el modo normal, camina en el modo invisible, atraviesa enemigos sin ser visto y en el modo enojado, ataca con más fuerza.
-
-1. El jugador solo selecciona el modo, y el personaje ajusta automáticamente su comportamiento según el estado en el que se encuentra.
-2. El comportamiento de un objeto cambia dinámicamente en función de su estado actual.
-
-
-
-
-
-
-
-
-
-
----
-
 ## Ejemplo de Uso en Codigo
 
 ```python
@@ -108,6 +90,16 @@ if __name__ == "__main__":
 
     for _ in range(6):  
         traffic_light.request()
+```
+---
+
+## Analogia
+
+En un videojuego, un personaje puede cambiar entre diferentes modos, normal, invisible y enojado, en el modo normal, camina en el modo invisible, atraviesa enemigos sin ser visto y en el modo enojado, ataca con más fuerza.
+
+1. El jugador solo selecciona el modo, y el personaje ajusta automáticamente su comportamiento según el estado en el que se encuentra.
+2. El comportamiento de un objeto cambia dinámicamente en función de su estado actual.
+
 
 
 
