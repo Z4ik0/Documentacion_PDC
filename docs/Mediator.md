@@ -14,7 +14,6 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 
 --------
 
-
 ## Características Principales
 1. **Centralización:**
     * Todas las interacciones entre los objetos pasan por un mediador central.
@@ -27,40 +26,21 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 
 4. **Mantenibilidad Mejorada:**
     * Cambios en un objeto o en las interacciones no afectan directamente a otros objetos.
+
 ------
+## Ventajas y Desventajas.
 
-## Ventajas.
-
-| **Ventaja**                          | **Descripción**                                                                                      |
-|--------------------------------------|------------------------------------------------------------------------------------------------------|
-| **Reducción de dependencias**        | Minimiza las dependencias entre objetos, haciendo que estén menos acoplados y sean más fáciles de modificar. |
-| **Facilita la escalabilidad**        | Permite agregar nuevos objetos o cambiar los existentes sin afectar a otros objetos relacionados.         |
-| **Centralización de la lógica**      | La lógica de interacción entre objetos se centraliza en el mediador, simplificando la colaboración.       |
-| **Código más limpio**                | Reduce la complejidad del código al evitar comunicaciones directas entre múltiples objetos.               |
-| **Mejora la reutilización**          | Los objetos individuales son más reutilizables porque no están acoplados a otros objetos específicos.     |
-
-## Desventajas.
-
-| **Desventaja**                       | **Descripción**                                                                                              |
-|--------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| **Sobrecarga del mediador**          | El mediador puede convertirse en un "Dios" que maneja demasiada lógica, lo que dificulta su mantenimiento.  |
-| **Complejidad del mediador**         | A medida que crece el número de objetos y la lógica de interacción, el mediador puede volverse complicado.  |
-| **Pérdida de flexibilidad**          | Toda la interacción entre objetos depende del mediador, lo que limita soluciones alternativas.               |
-| **Punto único de fallo**             | Si el mediador tiene un error o falla, toda la interacción entre objetos se ve afectada.                    |
+| **Ventajas**                                   | **Desventajas**                                                                                     |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Reducción de dependencias**: Minimiza las dependencias entre objetos, haciendo que estén menos acoplados y sean más fáciles de modificar. | **Sobrecarga del mediador**: El mediador puede convertirse en un "Dios" que maneja demasiada lógica, lo que dificulta su mantenimiento. |
+| **Facilita la escalabilidad**: Permite agregar nuevos objetos o cambiar los existentes sin afectar a otros objetos relacionados. | **Complejidad del mediador**: A medida que crece el número de objetos y la lógica de interacción, el mediador puede volverse complicado. |
+| **Centralización de la lógica**: La lógica de interacción entre objetos se centraliza en el mediador, simplificando la colaboración. | **Pérdida de flexibilidad**: Toda la interacción entre objetos depende del mediador, lo que limita soluciones alternativas. |
+| **Código más limpio**: Reduce la complejidad del código al evitar comunicaciones directas entre múltiples objetos. | **Punto único de fallo**: Si el mediador tiene un error o falla, toda la interacción entre objetos se ve afectada. |
+| **Mejora la reutilización**: Los objetos individuales son más reutilizables porque no están acoplados a otros objetos específicos. | |
 
 -------
 
-## Analogía.
-
-Los pilotos de los aviones que llegan o salen del área de control del aeropuerto no se comunican directamente entre sí. En lugar de eso, hablan con un controlador de tráfico aéreo, que está sentado en una torre alta cerca de la pista de aterrizaje. Sin el controlador de tráfico aéreo, los pilotos tendrían que ser conscientes de todos los aviones en las proximidades del aeropuerto y discutir las prioridades de aterrizaje con un comité de decenas de otros pilotos. Probablemente, esto provocaría que las estadísticas de accidentes aéreos se dispararan.
-
-![Mediator](https://refactoring.guru/images/patterns/diagrams/mediator/live-example.png) 
-
-La torre no necesita controlar el vuelo completo. Sólo existe para imponer límites en el área de la terminal porque el número de actores implicados puede resultar difícil de gestionar para un piloto.
-
------
-
-## Ejemplo de implementación.
+## Implementación.
 
 ![estructura](https://refactoring.guru/images/patterns/diagrams/mediator/structure.png)
 
@@ -70,7 +50,7 @@ La torre no necesita controlar el vuelo completo. Sólo existe para imponer lím
 
 3. Los Mediadores Concretos encapsulan las relaciones entre varios componentes. Los mediadores concretos a menudo mantienen referencias a todos los componentes que gestionan y en ocasiones gestionan incluso su ciclo de vida.
 
-## Pseudocódigo.
+**Pseudocódigo.**
 
 En este ejemplo, el patrón Mediator te ayuda a eliminar dependencias mutuas entre varias clases UI: botones, casillas y etiquetas de texto.
 
@@ -81,7 +61,8 @@ Un elemento activado por un usuario, no se comunica directamente con otros eleme
 
 En este ejemplo, el diálogo de autenticación actúa como mediador. Sabe cómo deben colaborar los elementos concretos y facilita su comunicación indirecta. Al recibir una notificación sobre un evento, el diálogo decide qué elemento debe encargarse del evento y redirige la llamada en consecuencia.
 
-## Código de implementación.
+**Código de implementación.**
+
 ~~~
 // La interfaz mediadora declara un método utilizado por los
 // componentes para notificar al mediador sobre varios eventos.
@@ -170,3 +151,12 @@ class Checkbox extends Component is
         dialog.notify(this, "check")
     // ...
 ~~~
+
+------
+## Analogía.
+
+Los pilotos de los aviones que llegan o salen del área de control del aeropuerto no se comunican directamente entre sí. En lugar de eso, hablan con un controlador de tráfico aéreo, que está sentado en una torre alta cerca de la pista de aterrizaje. Sin el controlador de tráfico aéreo, los pilotos tendrían que ser conscientes de todos los aviones en las proximidades del aeropuerto y discutir las prioridades de aterrizaje con un comité de decenas de otros pilotos. Probablemente, esto provocaría que las estadísticas de accidentes aéreos se dispararan.
+
+![Mediator](https://refactoring.guru/images/patterns/diagrams/mediator/live-example.png) 
+
+La torre no necesita controlar el vuelo completo. Sólo existe para imponer límites en el área de la terminal porque el número de actores implicados puede resultar difícil de gestionar para un piloto.

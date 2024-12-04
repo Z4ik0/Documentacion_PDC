@@ -8,6 +8,7 @@ sidebar_position: 4
 Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 El patrón Iterator permite recorrer los elementos de una colección de objetos sin exponer la estructura interna de la colección.
 
+------
 ## Propósito: 
 El patrón Iterator permite recorrer una colección (como un álbum de fotos) sin exponer cómo está organizada internamente.
 
@@ -20,7 +21,7 @@ El patrón Iterator permite recorrer una colección (como un álbum de fotos) si
 2. Facilita el acceso a los elementos de manera secuencial.
 
 3. El mismo código de iteración se puede usar para diferentes colecciones.
----------
+
 La idea central del patrón Iterator es extraer el comportamiento de recorrido de una colección y colocarlo en un objeto independiente llamado iterador.
 
 ![Diagrama de Iterator](https://refactoring.guru/images/patterns/diagrams/iterator/solution1.png?id=2f5fbcce6099d8ea09b2fbb83e3e7059)
@@ -32,38 +33,19 @@ Normalmente, los iteradores aportan un método principal para extraer elementos 
 Todos los iteradores deben implementar la misma interfaz. Esto hace que el código cliente sea compatible con cualquier tipo de colección o cualquier algoritmo de recorrido, siempre y cuando exista un iterador adecuado. Si necesitas una forma particular de recorrer una colección, creas una nueva clase iteradora sin tener que cambiar la colección o el cliente.
 
 ---------
-## Ventajas.
+## Ventajas y Desventajas.
 
-| **Ventaja**                          | **Descripción**                                                                                      |
-|--------------------------------------|------------------------------------------------------------------------------------------------------|
-| **Abstracción del recorrido**        | Permite recorrer una colección sin exponer su estructura interna.                                   |
-| **Compatibilidad con diferentes colecciones** | Facilita trabajar con diferentes tipos de colecciones de manera uniforme.                          |
-| **Simplificación del código cliente**| Reduce la complejidad del código que interactúa con las colecciones.                                |
-| **Separación de responsabilidades** | Separa la lógica de iteración de la colección misma, promoviendo un diseño más limpio.              |
-| **Reutilización**                    | Los iteradores pueden ser reutilizados en diferentes contextos sin modificar la colección.          |
+| **Ventajas**                                   | **Desventajas**                                                                                     |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Abstracción del recorrido**: Permite recorrer una colección sin exponer su estructura interna. | **Sobrecarga de objetos**: Puede aumentar la cantidad de objetos en memoria al crear instancias de iteradores. |
+| **Compatibilidad con diferentes colecciones**: Facilita trabajar con diferentes tipos de colecciones de manera uniforme. | **Complejidad en iteradores complejos**: La implementación de iteradores para estructuras de datos complejas puede ser difícil. |
+| **Simplificación del código cliente**: Reduce la complejidad del código que interactúa con las colecciones. | **Falta de control bidireccional**: Algunos iteradores básicos no permiten navegar hacia atrás en la colección. |
+| **Separación de responsabilidades**: Separa la lógica de iteración de la colección misma, promoviendo un diseño más limpio. | **Dependencia de la colección**: Aunque el iterador abstrae el recorrido, sigue dependiendo de la estructura de la colección para funcionar. |
+| **Reutilización**: Los iteradores pueden ser reutilizados en diferentes contextos sin modificar la colección. | |
 
-## Desventajas.
-
-| **Desventaja**                     | **Descripción**                                                                                              |
-|------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| **Sobrecarga de objetos**          | Puede aumentar la cantidad de objetos en memoria al crear instancias de iteradores.                         |
-| **Complejidad en iteradores complejos** | La implementación de iteradores para estructuras de datos complejas puede ser difícil.                     |
-| **Falta de control bidireccional** | Algunos iteradores básicos no permiten navegar hacia atrás en la colección.                                |
-| **Dependencia de la colección**    | Aunque el iterador abstrae el recorrido, sigue dependiendo de la estructura de la colección para funcionar. |
 -----------
-## Analogía. 
-Planeas visitar Roma por unos días y ver todas sus atracciones y puntos de interés. Pero, una vez allí, podrías perder mucho tiempo dando vueltas, incapaz de encontrar siquiera el Coliseo.
 
-En lugar de eso, podrías comprar una aplicación de guía virtual para tu smartphone y utilizarla para moverte. Es buena y barata y puedes quedarte en sitios interesantes todo el tiempo que quieras.
-
-![imagen](https://refactoring.guru/images/patterns/content/iterator/iterator-comic-1-es.png?id=0ceb64477a16210f039bc8c9650029c3)
-
-Una tercera alternativa sería dedicar parte del presupuesto del viaje a contratar un guía local que conozca la ciudad como la palma de su mano. El guía podría adaptar la visita a tus gustos, mostrarte las atracciones y contarte un montón de emocionantes historias. Eso sería más divertido pero, lamentablemente, también más caro.
-
-Todas estas opciones —las direcciones aleatorias en tu cabeza, el navegador del smartphone o el guía humano—, actúan como iteradores sobre la amplia colección de visitas y atracciones de Roma.
-
------------ 
-## Ejemplo de implementación.
+## Implementación.
 
 En este ejemplo, el patrón Iterator se utiliza para recorrer un tipo especial de colección que encapsula el acceso al grafo social de Facebook. La colección proporciona varios iteradores que recorren perfiles de distintas formas.
 ![imagen](https://refactoring.guru/images/patterns/diagrams/iterator/example.png?id=f2a24ef3787bf80ed450709240506ff2)
@@ -72,7 +54,7 @@ El iterador ‘amigos’ puede utilizarse para recorrer los amigos de un perfil 
 
 El código cliente no está acoplado a clases concretas porque sólo trabaja con colecciones e iteradores a través de interfaces. Si decides conectar tu aplicación a una nueva red social, sólo necesitas proporcionar nuevas clases de colección e iteradoras, sin cambiar el código existente.
 
-## Código de implementación.
+**Código de implementación.**
 ~~~ 
 // La interfaz de colección debe declarar un método fábrica para
 // producir iteradores. Puedes declarar varios métodos si hay
@@ -175,3 +157,15 @@ class Application is
         spammer.send(iterator, "Very important message")
 ~~~
 
+------
+
+## Analogía. 
+Planeas visitar Roma por unos días y ver todas sus atracciones y puntos de interés. Pero, una vez allí, podrías perder mucho tiempo dando vueltas, incapaz de encontrar siquiera el Coliseo.
+
+En lugar de eso, podrías comprar una aplicación de guía virtual para tu smartphone y utilizarla para moverte. Es buena y barata y puedes quedarte en sitios interesantes todo el tiempo que quieras.
+
+![imagen](https://refactoring.guru/images/patterns/content/iterator/iterator-comic-1-es.png?id=0ceb64477a16210f039bc8c9650029c3)
+
+Una tercera alternativa sería dedicar parte del presupuesto del viaje a contratar un guía local que conozca la ciudad como la palma de su mano. El guía podría adaptar la visita a tus gustos, mostrarte las atracciones y contarte un montón de emocionantes historias. Eso sería más divertido pero, lamentablemente, también más caro.
+
+Todas estas opciones —las direcciones aleatorias en tu cabeza, el navegador del smartphone o el guía humano—, actúan como iteradores sobre la amplia colección de visitas y atracciones de Roma.
