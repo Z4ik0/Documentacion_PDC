@@ -53,7 +53,7 @@ _Es un patrón de diseño de comportamiento que permite almacenar el estado inte
 
 ---
 
-#### Ejemplo de Uso en Codigo
+## Ejemplo de Uso en Codigo
 
 ``` java
 class Memento {
@@ -87,4 +87,11 @@ public class Main {
         System.out.println("Estado restaurado: " + editor.getContent());
     }
 }
+```
+---
 
+## Analogia
+
+Un escritor trabaja en su libro y, de vez en cuando, hace fotocopias de lo que ha escrito hasta ese momento, estas fotocopias capturan exactamente el estado del libro en un punto específico, si en algún momento no le gusta cómo avanza la historia, puede regresar a una fotocopia anterior y continuar desde allí.
+
+1. Permite guardar el estado de un objeto en un momento dado y restaurarlo más adelante, sin que se revelen los detalles internos del objeto.
