@@ -8,8 +8,10 @@ sidebar_position: 4
 Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 El patrón Iterator permite recorrer los elementos de una colección de objetos sin exponer la estructura interna de la colección.
 
+![imagen](https://refactoring.guru/images/patterns/diagrams/iterator/example.png?id=f2a24ef3787bf80ed450709240506ff2)
+
 ------
-## Propósito: 
+## Propósito. 
 El patrón Iterator permite recorrer una colección (como un álbum de fotos) sin exponer cómo está organizada internamente.
 
 ![Imagen del patron Iterator.](https://refactoring.guru/images/patterns/content/iterator/iterator-es.png?id=79d47b82a1e72adaaa70d8e1a3b10a4e)
@@ -45,17 +47,10 @@ Todos los iteradores deben implementar la misma interfaz. Esto hace que el códi
 
 -----------
 
-## Implementación.
-
-En este ejemplo, el patrón Iterator se utiliza para recorrer un tipo especial de colección que encapsula el acceso al grafo social de Facebook. La colección proporciona varios iteradores que recorren perfiles de distintas formas.
-![imagen](https://refactoring.guru/images/patterns/diagrams/iterator/example.png?id=f2a24ef3787bf80ed450709240506ff2)
-
-El iterador ‘amigos’ puede utilizarse para recorrer los amigos de un perfil dado. El iterador ‘colegas’ hace lo mismo, excepto que omite amigos que no trabajen en la misma empresa que la persona objetivo. Ambos iteradores implementan una interfaz común que permite a los clientes extraer perfiles sin profundizar en los detalles de la implementación, como la autenticación y el envío de solicitudes REST.
-
-El código cliente no está acoplado a clases concretas porque sólo trabaja con colecciones e iteradores a través de interfaces. Si decides conectar tu aplicación a una nueva red social, sólo necesitas proporcionar nuevas clases de colección e iteradoras, sin cambiar el código existente.
+## Ejemplo.
 
 **Código de implementación.**
-~~~ 
+~~~ java
 // La interfaz de colección debe declarar un método fábrica para
 // producir iteradores. Puedes declarar varios métodos si hay
 // distintos tipos de iteración disponibles en tu programa.
@@ -63,8 +58,7 @@ El código cliente no está acoplado a clases concretas porque sólo trabaja con
 interface SocialNetwork is
     method createFriendsIterator(profileId):ProfileIterator
     method createCoworkersIterator(profileId):ProfileIterator
-~~~
-~~~
+
 // Cada colección concreta está acoplada a un grupo de clases
 // iteradoras concretas que devuelve, pero el cliente no lo
 // está, ya que la firma de estos métodos devuelve interfaces
@@ -76,14 +70,12 @@ class Facebook implements SocialNetwork is
         return new FacebookIterator(this, profileId, "friends")
     method createCoworkersIterator(profileId) is
         return new FacebookIterator(this, profileId, "coworkers")
-~~~
-~~~
+
 // La interfaz común a todos los iteradores.
 interface ProfileIterator is
     method getNext():Profile
     method hasMore():bool
-~~~
-~~~
+
 // La clase iteradora concreta.
 class FacebookIterator implements ProfileIterator is
     // El iterador necesita una referencia a la colección que
@@ -104,8 +96,7 @@ class FacebookIterator implements ProfileIterator is
     private method lazyInit() is
         if (cache == null)
             cache = facebook.socialGraphRequest(profileId, type)
-~~~
-~~~
+
     // Cada clase iteradora concreta tiene su propia
     // implementación de la interfaz iteradora común.
     method getNext() is
@@ -117,8 +108,7 @@ class FacebookIterator implements ProfileIterator is
     method hasMore() is
         lazyInit()
         return currentPosition < cache.length
-~~~
-~~~
+
 // Aquí tienes otro truco útil: puedes pasar un iterador a una
 // clase cliente en lugar de darle acceso a una colección
 // completa. De esta forma, no expones la colección al cliente.
@@ -133,8 +123,7 @@ class SocialSpammer is
         while (iterator.hasMore())
             profile = iterator.getNext()
             System.sendEmail(profile.getEmail(), message)
-~~~
-~~~
+
 // La clase Aplicación configura colecciones e iteradores y
 // después los pasa al código cliente.
 class Application is

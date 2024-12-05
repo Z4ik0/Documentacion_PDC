@@ -7,6 +7,9 @@ sidebar_position: 5
 ## Definición.
 El patrón Mediator define un objeto que centraliza la comunicación entre un conjunto de objetos, evitando que estos se comuniquen directamente entre sí. En lugar de hacerlo, todos los objetos interactúan con el mediador, que gestiona y coordina las interacciones. Esto reduce el acoplamiento entre los objetos y mejora la mantenibilidad del sistema.
 
+![estructura](https://refactoring.guru/images/patterns/diagrams/mediator/structure.png)
+
+
 ----------
 ## Proposito.
 
@@ -14,7 +17,7 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 
 --------
 
-## Características Principales
+## Características Principales.
 1. **Centralización:**
     * Todas las interacciones entre los objetos pasan por un mediador central.
 
@@ -40,30 +43,11 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 
 -------
 
-## Implementación.
-
-![estructura](https://refactoring.guru/images/patterns/diagrams/mediator/structure.png)
-
-1. Los Componentes son varias clases que contienen cierta lógica de negocio. Cada componente tiene una referencia a una interfaz mediadora, declarada con su tipo. El componente no conoce la clase de la interfaz mediadora, por lo que puedes reutilizarlo en otros programas vinculándolo a una mediadora diferente.
-
-2. La interfaz Mediadora declara métodos de comunicación con los componentes, que normalmente incluyen un único método de notificación. Los componentes pueden pasar cualquier contexto como argumentos de este método, incluyendo sus propios objetos, pero sólo de tal forma que no haya acoplamiento entre un componente receptor y la clase del emisor.
-
-3. Los Mediadores Concretos encapsulan las relaciones entre varios componentes. Los mediadores concretos a menudo mantienen referencias a todos los componentes que gestionan y en ocasiones gestionan incluso su ciclo de vida.
-
-**Pseudocódigo.**
-
-En este ejemplo, el patrón Mediator te ayuda a eliminar dependencias mutuas entre varias clases UI: botones, casillas y etiquetas de texto.
-
-
-![Pseudocodigo](https://refactoring.guru/images/patterns/diagrams/mediator/example.png)
-
-Un elemento activado por un usuario, no se comunica directamente con otros elementos, aunque parezca que debería. En lugar de eso, el elemento solo necesita dar a conocer el evento al mediador, pasando la información contextual junto a la notificación.
-
-En este ejemplo, el diálogo de autenticación actúa como mediador. Sabe cómo deben colaborar los elementos concretos y facilita su comunicación indirecta. Al recibir una notificación sobre un evento, el diálogo decide qué elemento debe encargarse del evento y redirige la llamada en consecuencia.
+## Ejemplo.
 
 **Código de implementación.**
 
-~~~
+~~~php
 // La interfaz mediadora declara un método utilizado por los
 // componentes para notificar al mediador sobre varios eventos.
 // El mediador puede reaccionar a estos eventos y pasar la
