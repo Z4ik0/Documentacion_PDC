@@ -55,6 +55,8 @@ _Es un patrón de diseño de comportamiento que permite almacenar el estado inte
 
 ## Ejemplo de Uso en Codigo
 
+Aqui se implementa el Patrón Memento para guardar y restaurar el estado de un objeto, la clase Memento almacena de forma inmutable el estado del editor de texto, la clase TextEditor permite modificar el contenido (setContent), guardar el estado actual en un Memento con save y restaurarlo con restore, en el programa principal, el editor guarda el contenido inicial "Hola, mundo" lo modifica a "Texto modificado" y luego lo restaura al estado guardado, este patrón es útil para implementar funcionalidades como "deshacer" sin exponer los detalles internos del objeto.
+
 ``` java
 class Memento {
     private final String state;
