@@ -51,6 +51,12 @@ _Es un patrón de diseño de comportamiento que permite a un objeto cambiar su c
 
 ## Ejemplo de Uso en Codigo
 
+Se utiliza el Patrón State para simular un semáforo, define una clase abstracta State que sirve como interfaz para los estados RedState, YellowState, GreenState, cada estado implementa un método handle que realiza una acción como imprimir un mensaje y cambia el estado al siguiente.
+
+La clase TrafficLight representa el semáforo, mantiene el estado actual y delega el comportamiento al estado correspondiente. Al iniciar en RedState, un bucle cambia los estados cíclicamente rojo a amarillo a verde a rojo, este enfoque organiza el código y elimina los condicionales complejos y facilita el agregar nuevos estados.
+
+
+
 ```python
 from abc import ABC, abstractmethod
 
