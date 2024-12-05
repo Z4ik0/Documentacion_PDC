@@ -2,46 +2,80 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Patrones de Diseño de Comportamiento 
+---
+## Definicion
 
-Let's discover **Docusaurus in less than 5 minutes**.
+ _Son un tipo de patrón de diseño de software que se enfoca en la comunicación y el comportamiento entre objetos o clases dentro de un sistema, estos patrones ayudan a definir cómo interactúan los objetos para lograr un comportamiento específico y cómo se pueden modificar sus interacciones sin cambiar su estructura interna_. 
 
-## Getting Started
+![Patrón de comportamiento](https://laescuelaylosjuicios.com.ar/wp-content/uploads/comportamiento-humano85.jpg)
 
-Get started by **creating a new site**.
+---
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
 
-### What you'll need
+## Proposito
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+1. **_Gestionar la Comunicación entre Objetos_**
+   - Muchos patrones de comportamiento están diseñados para facilitar y optimizar cómo los objetos interactúan entre sí.
+   - En sistemas complejos, los objetos pueden tener muchas interacciones, y estos patrones ayudan a definir cómo debe ocurrir esa comunicación de manera eficiente y flexible.
 
-## Generate a new site
+2. **_Desacoplar Componentes del Sistema_**
+   - Los patrones de comportamiento ayudan a desacoplar los objetos de un sistema al delegar responsabilidades y controlar la interacción entre ellos de una manera más flexible.
+   - Esto permite cambiar el comportamiento de un sistema sin tener que modificar las clases involucradas directamente.
 
-Generate a new Docusaurus site using the **classic template**.
+3. **_Aumentar la Flexibilidad del Sistema_**
+   - Los patrones de comportamiento facilitan que el sistema se pueda adaptar a cambios o extensiones.
+   - Estos patrones son útiles para agregar nuevos comportamientos sin necesidad de modificar el código existente.
 
-The classic template will automatically be added to your project after you run the command:
+4. **_Controlar el Flujo de Ejecución_**
+   - Algunos patrones de comportamiento se enfocan en cómo controlar el flujo de ejecución de las operaciones en un sistema. 
+-------
+> ## Patrones de Comportamiento
+   - Chain of Responsibility
+   - Command
+   - Iterator
+   - Mediator
+   - Memento
+   - Observer
+   - State
+   - Strategy
+   - Template Method
+   - Visitor
+---
+## Caracteristicas
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+1. **_Facilitan la comunicación entre objetos_**
+   - Promueven interacciones claras y organizadas entre los objetos de un sistema.
+   - Ayudan a definir cómo los objetos se conectan e intercambian información.
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+2. **_Fomentan la reutilización de código_**
+   - Proporcionan soluciones estándar a problemas comunes relacionados con el comportamiento de los objetos.
+   - Permiten que las interacciones entre objetos sean reutilizables en diferentes contextos.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+3. **_Reducción del acoplamiento_**
+   - Minimizan las dependencias directas entre objetos, promoviendo un diseño más flexible y fácil de modificar.
 
-## Start your site
+4. **_Soporte para sistemas complejos_**
+   - Proporcionan soluciones para gestionar sistemas con muchas interacciones entre objetos, manteniendo la claridad y la organización del diseño.
+---
 
-Run the development server:
+## Ventajas y Desventajas
 
-```bash
-cd my-website
-npm run start
-```
+| **Ventajas** | **Desventajas** |
+|--------------|--------------|
+| Facilitan la comunicación y colaboración entre objetos.   | Mayor complejidad inicial.     |
+| Reducción del acoplamiento.      | Sobrecarga de diseño.     |
+| Flexibilidad y adaptabilidad.    | Aumento en el número de clases.  |
+| Reutilización del comportamiento.    | Rendimiento.   |
+| Mejora la organización del código.    | Dificultad para identificar el patrón adecuado.   |
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+---
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+**_Para mayor informacion aqui_** 👉
+[Patrones de Comportamiento](https://dianagaerste.com/patrones-de-comportamiento/)   👈
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+![Patrón de comportamiento](https://somospnt.com/images/blog/articulos/136-patrones-de-comportamiento-strategy/strategy-and-tactics-pro-.png)
+
+
+---
+
