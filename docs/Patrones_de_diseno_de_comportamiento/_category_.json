@@ -1,0 +1,8 @@
+{
+    "label": "Patrones",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "description": "Descubre cada patrón de diseño de comportamiento"
+    }
+  }
