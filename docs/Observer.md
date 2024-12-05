@@ -49,6 +49,9 @@ _Es un patrón de comportamiento que establece una relación de dependencias ent
 
 ## Ejemplo de Uso en Codigo
 
+Aqui implementa el Patrón Observer, donde una estación meteorológica notifica a una aplicación sobre cambios en la temperatura, la interfaz Observer define el método update, que los observadores deben implementar para recibir actualizaciones, la clase WeatherStation actúa como el sujeto que mantiene una lista de observadores y los notifica cuando cambia la temperatura y la clase WeatherApp implementa la interfaz Observer y muestra la temperatura cuando es actualizada, en el ejemplo, la estación registra la aplicación como observador, y cuando se cambia la temperatura, la aplicación recibe las actualizaciones automáticamente, este patrón es útil para sistemas donde varios componentes deben reaccionar a cambios en un objeto central, como en aplicaciones meteorológicas o financieras.
+
+
 ``` java
 import java.util.ArrayList;
 import java.util.List;
