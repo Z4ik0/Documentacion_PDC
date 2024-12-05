@@ -2,17 +2,23 @@
 sidebar_position: 9
 ---
 
+# Strategy
 
+----------
 
 ## Definición
 El patrón Estrategia (Strategy) es un patrón de diseño para el desarrollo de software. Se clasifica como patrón de comportamiento porque determina cómo se debe realizar el intercambio de mensajes entre diferentes objetos para resolver una tarea. El patrón estrategia permite mantener un conjunto de algoritmos de entre los cuales el objeto cliente puede elegir aquel que le conviene e intercambiarlo dinámicamente según sus necesidades.
 
 ![Patron strategy](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png?id=c6aa910c94960f35d100bfca02810ea1)
 
+-------------
+
 ## Proposito
 **Strategy** es un patrón de diseño de comportamiento que te permite definir una familia de algoritmos, colocar cada uno de ellos en una clase separada y hacer sus objetos intercambiables.
 
 ![Strategy_image](https://refactoring.guru/images/patterns/content/strategy/strategy.png?id=379bfba335380500375881a3da6507e0)
+
+------------
 
 ## Caracteristicas principales
 
@@ -48,6 +54,7 @@ Las estrategias nuevas se pueden agregar extendiendo el sistema, sin necesidad d
 
 Cada estrategia tiene un propósito bien definido, lo que mejora la claridad y la modularidad del código.
 
+-------------------
 
 ## Ventajas y Desventajas
 
@@ -58,7 +65,14 @@ Promueve el cumplimiento del principio SOLID, especialmente el abierto/cerrado.|
 Facilita pruebas unitarias al permitir el uso de estrategias independientes.| Puede implicar una sobrecarga de memoria y procesamiento al manejar muchas instancias de estrategias.
 Permite elegir la estrategia en tiempo de ejecución.|Si no se implementa correctamente, puede ser confuso para desarrolladores nuevos en el proyecto.
 
+--------------
+
 ## Ejemplo de codigo en Python 
+
+El patrón Strategy permite definir un conjunto de algoritmos intercambiables y encapsular cada uno dentro de su propia clase. En el ejemplo, las estrategias representan métodos de pago diferentes (tarjeta de crédito y PayPal). El contexto maneja la estrategia seleccionada y delega la ejecución del pago. Esto permite cambiar la estrategia sin modificar el código del contexto.
+
+Clave: Las estrategias son independientes y se intercambian dinámicamente según las necesidades.
+
 ```python
 from abc import ABC, abstractmethod
 
@@ -100,6 +114,8 @@ cart3 = ShoppingCart(BitcoinPayment())
 print(cart3.checkout(500))  # Output: Paid 500 using Bitcoin.
 
 ```
+
+-------------
 
 ## Analogía
 Imagina que tienes que llegar al aeropuerto. Puedes tomar el autobús, pedir un taxi o ir en bicicleta. Éstas son tus estrategias de transporte. Puedes elegir una de las estrategias, dependiendo de factores como el presupuesto o los límites de tiempo.

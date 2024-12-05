@@ -2,7 +2,9 @@
 sidebar_position: 11
 ---
 
+# Visitor
 
+--------------
 
 ## Definición
 
@@ -10,11 +12,15 @@ El patrón Visitor es un patrón de diseño de comportamiento que permite separa
 
 ![Patron VIsitor](https://refactoring.guru/images/patterns/diagrams/visitor/structure-es.png)
 
+--------------
+
 ## Propósito
 
 El propósito de Visitor es agregar nuevas funcionalidades a una jerarquía de clases sin alterar sus definiciones, manteniendo la estructura fija. Esto es especialmente útil cuando las operaciones sobre las clases cambian con más frecuencia que las clases mismas.
 
 ![ilustración representativa Visitor](https://refactoring.guru/images/patterns/content/visitor/visitor.png)
+
+--------------
 
 ## Características principales
 
@@ -40,6 +46,8 @@ El propósito de Visitor es agregar nuevas funcionalidades a una jerarquía de c
     
     El patrón introduce un alto acoplamiento entre el visitante y la jerarquía de clases, ya que el visitante debe conocer los detalles de cada clase para operar correctamente
 
+--------------
+
 ## Ventajas y Desventajas
 
 Ventajas | Desventajas
@@ -49,7 +57,14 @@ Separa la lógica de operaciones de la estructura de objetos.| Puede ser difíci
 Promueve la organización del código al mover algoritmos fuera de las clases.| Si las clases cambian frecuentemente, se requiere actualizar todos los visitantes.
 Permite manejar diferentes tipos de objetos de manera uniforme.| No es ideal si la jerarquía de clases cambia más frecuentemente que las operaciones.
 
+--------------
+
 ## Ejemplo de código en Python
+
+El patrón Visitor separa las operaciones de la estructura de objetos sobre la que actúan. En el ejemplo, diferentes formas geométricas (Circle, Square) aceptan un visitante (AreaCalculator) que realiza una operación específica. Esto permite agregar nuevas operaciones sin modificar las clases de los objetos.
+
+Clave: Ideal para agregar funcionalidades sin alterar las clases base.
+
 ```python
 from abc import ABC, abstractmethod
 
@@ -93,6 +108,8 @@ visitor = AreaCalculator()
 for shape in shapes:
     shape.accept(visitor)
 ```
+
+--------------
 
 ## Analogía 
 

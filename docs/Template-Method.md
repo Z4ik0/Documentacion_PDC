@@ -2,7 +2,9 @@
 sidebar_position: 10
 ---
 
+# Template Method
 
+--------------
 
 ## Definición
 
@@ -10,11 +12,16 @@ El patrón Template Method es un patrón de diseño de comportamiento que define
 
 ![Patron Template Method](https://refactoring.guru/images/patterns/diagrams/template-method/structure.png)
 
+--------------
+
+
 ## Propósito
 
 El propósito de Template Method es reutilizar el código común y definir los pasos esenciales de un algoritmo en una clase base, dejando que las subclases implementen los detalles específicos. Esto asegura consistencia en el flujo del algoritmo mientras permite flexibilidad en los detalles.
 
 ![Patron Template Method](https://refactoring.guru/images/patterns/content/template-method/template-method.png)
+
+--------------
 
 ## Características principales
 
@@ -46,6 +53,8 @@ El propósito de Template Method es reutilizar el código común y definir los p
 
     El patrón puede incluir hooks o métodos opcionales en la clase base. Los hooks son métodos vacíos o con una implementación predeterminada que las subclases pueden sobrescribir para agregar comportamiento adicional, pero no están obligadas a hacerlo.
 
+--------------
+
 ## Ventajas y Desventajas 
 
 Venajas | Desventajas
@@ -55,7 +64,14 @@ Facilita la extensión del comportamiento mediante subclases.| Obliga a que las 
 Simplifica el mantenimiento al centralizar el flujo del algoritmo.| Puede ser difícil de entender si hay demasiadas subclases con diferentes implementaciones.
 Garantiza un flujo uniforme para todas las subclases.| El abuso del patrón puede llevar a jerarquías de clases innecesariamente complejas.
 
+--------------
+
 ## Ejemplo de código en Python
+
+El patrón Template Method define la estructura general de un algoritmo en un método base (la plantilla), mientras que las subclases concretas implementan los pasos específicos. En el ejemplo, Football y Chess personalizan las etapas del juego, pero el flujo (initialize, start_play, end_play) está controlado por la clase base.
+
+Clave: Proporciona flexibilidad para personalizar detalles mientras se mantiene un flujo fijo.
+
 ```python
 from abc import ABC, abstractmethod
 
@@ -109,6 +125,9 @@ print("\n")
 game2 = Chess()
 game2.play()
 ```
+
+--------------
+
 ## Analogía
 
 El enfoque del método plantilla puede emplearse en la construcción de viviendas en masa. El plan arquitectónico para construir una casa estándar puede contener varios puntos de extensión que permitirán a un potencial propietario ajustar algunos detalles de la casa resultante.
