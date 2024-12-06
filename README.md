@@ -1,13 +1,18 @@
 # Patrones de Diseño de Comportamiento.
 
-Los patrones de comportamiento hablan de la lógica de nuestro sistema, algoritmos, responsabilidades de las clases y cómo se comunican entre sí. 
+El Proyecto de Documentación de Patrones de Diseño de Comportamiento tiene como objetivo crear una referencia completa, accesible y bien estructurada sobre los patrones de diseño de comportamiento, esta documentación está orientada a equipos de software que buscan comprender y aplicar estos patrones para mejorar la calidad, la flexibilidad y la mantenibilidad de sus sistemas. 
 
 ![Patrón de comportamiento](https://danielggarcia.wordpress.com/wp-content/uploads/2014/05/052014_0541_patronesdec1.png)
 
 ## Propósito de los Patrones.
 
-   - El propósito de los patrones de diseño de comportamiento es definir cómo se distribuyen las responsabilidades y cómo se coordinan los objetos para lograr un comportamiento deseado.
-   
+Proporcionar una guía completa y estructurada sobre los patrones de diseño de comportamiento, que sirva como una herramienta de referencia para equipos de software, através de esta documentación, nuestro proyecto busca:
+
+ - Facilitar el aprendizaje y la aplicación de patrones de diseño de comportamiento.
+ - Promover las buenas prácticas en diseño de software.
+ - Optimizar la comunicación y colaboración en equipos de desarrollo.
+ - Conectar la teoría con la práctica.
+
 ## Algunos Patrones de Comportamiento
 
 1. Chain of Responsibility
@@ -21,30 +26,21 @@ Los patrones de comportamiento hablan de la lógica de nuestro sistema, algoritm
 9. Template Method
 10 Visitor
 
-## Caracteristicas
+## Realizado con 🛠️
 
-Los patrones de diseño de comportamiento son soluciones a problemas comunes en el diseño de software que se enfocan en la lógica del sistema.
+ - Docusaurus. https://docusaurus.io/docs/installation
+ - Git Hub. https://github.com/
 
- - Observer: Permite notificar a un grupo de objetos que un evento ha ocurrido en la aplicación.
- - Mediator: Define un objeto que coordina la comunicación entre objetos de distintas clases.
- - Memento: Permite volver a estados anteriores del sistema. 
- - State: Permite que un objeto modifique su comportamiento cada vez que cambie su estado interno. 
+## Contribucion.
 
-## Ventajas y Desventajas
+El proyecto contribuye de manera significativa a la comunidad de desarrollo de software y al aprendizaje de buenas prácticas en diseño a través de los siguientes aspectos clave:
 
-Los patrones de diseño de comportamiento son plantillas que se utilizan para resolver problemas comunes en el desarrollo de software algunas en algunas sus ventajas son:  
+ - Proporciona una referencia consolidada y estructurada sobre patrones de diseño de comportamiento.
+ - Ofrece una guía clara y accesible que permite a desarrolladores, tanto principiantes como experimentados.
+ - Sirve como una herramienta de referencia para equipos de desarrollo.
 
- - Mejoran la flexibilidad de la comunicación y el control de las acciones. 
- - Definen cómo interactúan los objetos y cómo se distribuyen las responsabilidades entre ellos.
- - Ayudan a reducir la complejidad del código y del acoplamiento.
+## Autores
 
-Y en algunas de sus esventajas se encuentran:
-
- - Falta de reutilización
- - Dificultad en la tramitación de excepciones
-
-
-## Creditos
  - Irving Cruz Chavez
  - Miguel Ignacio Gomez Portes
  - Gerardo Aristeo Morales Alejo
