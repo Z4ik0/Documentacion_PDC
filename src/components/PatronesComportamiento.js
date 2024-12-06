@@ -30,21 +30,20 @@ function PatronesComportamiento() {
     <div
       style={{
         minHeight: '100vh',
-        background: 'var(--ifm-color-primary-lightest)', // Usar la variable de color de fondo
+        background: 'var(--ifm-color-primary-lightest)', 
         padding: '24px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
-      {/* Contenedor principal movido hacia arriba */}
       <div
         style={{
           maxWidth: '1200px',
           width: '100%',
           backgroundColor: 'white', // Fondo blanco por defecto
           borderRadius: '24px',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)', // Sombra por defecto
+          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
           overflow: 'hidden',
           transform: 'translateY(-80px)',
         }}
@@ -52,14 +51,14 @@ function PatronesComportamiento() {
         {/* Encabezado */}
         <header
           style={{
-            backgroundColor: 'var(--ifm-color-primary-dark)', // Usar color primario oscuro del tema
+            backgroundColor: 'var(--ifm-color-primary-dark)',
             padding: '16px 0',
             textAlign: 'center',
           }}
         >
           <h1
             style={{
-              color: 'var(--ifm-color-primary-lightest)', // Color de texto claro
+              color: 'var(--ifm-color-primary-lightest)',
               fontSize: '24px',
               fontWeight: 'bold',
               textTransform: 'uppercase',
@@ -73,7 +72,7 @@ function PatronesComportamiento() {
         <main
           style={{
             display: 'flex',
-            flexDirection: 'row', // Cambié a row para que estén en línea
+            flexDirection: 'row',
             alignItems: 'center',
             padding: '40px',
             gap: '32px',
@@ -86,7 +85,7 @@ function PatronesComportamiento() {
                 fontSize: '48px',
                 fontWeight: '800',
                 lineHeight: '1.2',
-                color: 'var(--ifm-color-primary)', // Usar color primario
+                color: 'var(--ifm-color-primary)', 
               }}
             >
               Patrones de Diseño de
@@ -95,7 +94,7 @@ function PatronesComportamiento() {
             </h2>
             <p
               style={{
-                color: 'var(--ifm-color-primary-darkest)', // Usar color de texto oscuro
+                color: 'var(--ifm-color-primary-darkest)',
                 fontSize: '18px',
                 lineHeight: '1.75',
                 margin: '16px 0',
@@ -111,7 +110,6 @@ function PatronesComportamiento() {
             </div>
           </div>
 
-          {/* Imagen a la derecha con borde redondeado */}
           <div
             style={{
               flex: 1,
@@ -125,7 +123,7 @@ function PatronesComportamiento() {
               style={{
                 maxWidth: '400px',
                 width: '100%',
-                borderRadius: '20px', // Bordes redondeados
+                borderRadius: '20px',
                 transition: 'transform 0.2s',
               }}
               onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
