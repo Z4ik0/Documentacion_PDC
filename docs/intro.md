@@ -29,8 +29,8 @@ sidebar_position: 1
 
 4. **_Controlar el Flujo de Ejecución_**
    - Algunos patrones de comportamiento se enfocan en cómo controlar el flujo de ejecución de las operaciones en un sistema. 
----
-> **_Patrones de Comportamiento_**
+-------
+> ## Patrones de Comportamiento
    - Chain of Responsibility
    - Command
    - Iterator
