@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # chain of responsability.
 
-## Definición
+## Definición.
 
 Chain of Responsibility es un patrón de diseño de comportamiento que te permite pasar solicitudes a lo largo de una cadena de manejadores. Al recibir una solicitud, cada manejador decide si la procesa o si la pasa al siguiente manejador de la cadena.
 
@@ -18,7 +18,7 @@ Básicamente, este patrón ayuda a encapsular acciones secuenciales sobre un obj
 ![Chain of Responsability](https://refactoring.guru/images/patterns/diagrams/chain-of-responsibility/solution1-es.png?id=122092268f688aa2015b2f20dabafb89)
 
 ------------------- 
-## Propósito
+## Propósito.
 Permitir que una solicitud pase a través de una cadena de objetos receptores hasta que uno de ellos la maneje. Este patrón desacopla al emisor de la solicitud del receptor, promoviendo una estructura flexible y extensible para manejar diferentes tipos de solicitudes.
 
 -----------------
@@ -48,11 +48,10 @@ Permitir que una solicitud pase a través de una cadena de objetos receptores ha
 
 
 -------
-## Ejemplo de implementación:
-El primer paso siempre es identificar al handler, implementando una clase abstracta con los métodos que requiera para el caso de uso. En mi caso aplicar el filtro y un método que identifique si ese handler debe ser ejecutado en función de los filtros activos por el usuario. A continuación la clase abstracta AbstractFilterHandler implementada:
+## Ejemplo:
 
 **Código de implementación:**
-~~~ 
+~~~ php
 class AbstractFilterHandler {
   constructor() {}
 applyFilter() {
@@ -68,9 +67,7 @@ _WARNING(fName = "unknown method") {
 export default AbstractFilterHandler;
 ~~~
 
-Una vez tenemos la clase abstracta debemos de implantar cada manejador específico. Para este artículo vamos a mostrar el ejemplo del manejador que filtra aquellos elementos que incluyen ciertos modelos:
-
-~~~
+~~~php
 import AbstractFilterHandler from "./filter";
 class ModelsFilterHandler extends AbstractFilterHandler {
   applyFilter(elements, filters) {
@@ -82,11 +79,8 @@ canIHandle(filters) {
 }
 export default ModelsFilterHandler;
 ~~~
-Como vemos en la implementación, en el método canIHandle() indicamos que el handler solo se invocará cuando en los filtros contengan modelos. Por otro lado el método applyFilter() implementa la acción realizada sobre los elementos.
 
-El siguiente paso es el de construir la cadena que se encarga de ejecutar el filtrado sobre los elementos y dar de alta los manejadores específicos. Para ello hemos creado la clase FilterChain:
-
-~~~
+~~~ php
 import * as Handlers from "./filters";
  
 class FilterChain {
@@ -118,17 +112,12 @@ class FilterChain {
 export default FilterChain;
 ~~~
 
-Como vemos, esta clase se encarga de recibir los elementos sobre los que se realizan la acción, el contexto de los filtros activos por el usuario y los manejadores que deben de ejecutarse. El método applyFilters() será el punto de entrada para la ejecución de la cadena.
-
-Para ejecutar el patrón en nuestro código simplemente tenemos que dar de alta el Chain y sus Handlers y llamar al método applyFilters:
-
 ~~~
 let chain = new FilterChain(elements, filters);
 chain.addHandler(new Handlers.ModelsFilterHandler());
 chain.addHandler(new Handlers.OrderByPriceFilterHandler());
 let result = handler.applyFilters(elements, filters);
-~~~
-Con estos sencillos pasos, hemos abstraído cada lógica de filtrado/ordenando en una clase distinta, evitando un código acoplado y sin una responsabilidad clara.
+~~~ 
 
 -----------
 

@@ -14,9 +14,11 @@ El patrón Command encapsula una solicitud como un objeto, permitiendo que se pa
 3. **CommandHandler/Handler.**
     * Es la clase que contiene la lógica a ejecutar, puede tener dependencias externas, como servicios de mensajería, conexiones a base de datos, servicios para escribir en logs… etc. Es importante que esta clase ejecute una y solo una acción, ya que en caso contrario resultaría muy confusa su nomenclatura.
 
+![](https://refactoring.guru/images/patterns/diagrams/command/structure.png)
+
 
 -----
-## Proposito.
+## Propósito.
 El propósito principal de este patrón es permitir que las solicitudes sean representadas como objetos, de forma que se pueda parametrizar las acciones a realizar, almacenarlas, ejecutar operaciones en momentos posteriores y realizar deshacer (undo).
 
 ![](https://refactoring.guru/images/patterns/content/command/command-es.png)
@@ -46,14 +48,11 @@ El propósito principal de este patrón es permitir que las solicitudes sean rep
 | **Reutilización**: Los manejadores pueden ser reutilizados en diferentes cadenas o contextos. | **Falta de garantía de manejo**: No hay certeza de que la solicitud será procesada si ningún manejador es capaz de hacerlo. |
 
 -----------
-## Implementación.
-implementación del patron Command con código :
+## Ejemplo.
 
-![](https://refactoring.guru/images/patterns/diagrams/command/structure.png)
+**Código**
 
-
-**Código de implementación.**
-~~~
+~~~php
 <?php
 
 namespace Api\Command\User;
@@ -81,7 +80,7 @@ final class RegisterUserCommand
     }
 }
 ~~~
-~~~
+~~~php
 <?php
 
 namespace Api\CommandHandler\User;
@@ -132,7 +131,7 @@ final class RegisterUserHandler
     }
 }
 ~~~
-~~~
+~~~ php
 <?php
 
 namespace Api\Controller\User;
