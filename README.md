@@ -1,6 +1,8 @@
 # Patrones de Diseño de Comportamiento.
+
 ## Definición de diseño de comportamiento.
 Son un tipo de patrón de diseño de software que se enfoca en la comunicación y el comportamiento entre objetos o clases dentro de un sistema, estos patrones ayudan a definir cómo interactúan los objetos para lograr un comportamiento específico y cómo se pueden modificar sus interacciones sin cambiar su estructura interna
+
 ![Patrón de comportamiento](https://laescuelaylosjuicios.com.ar/wp-content/uploads/comportamiento-humano85.jpg)
 
 ## Propósito
@@ -141,8 +143,8 @@ Haz clic en cada uno de ellos para ver su Información.
 -	Git 
 
 ## Instalación del Proyecto:
-Git clone 
-https://github.com/Z4ik0/Documentacion_PDC.git
+
+Git clone [URL del Proyecto]
 
 Acceder al Proyecto:
 Cd Documentación_PDC
