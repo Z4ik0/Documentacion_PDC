@@ -38,7 +38,7 @@ Los patrones de diseño de comportamiento son plantillas que se utilizan para re
  - Definen cómo interactúan los objetos y cómo se distribuyen las responsabilidades entre ellos.
  - Ayudan a reducir la complejidad del código y del acoplamiento.
 
-y en algunas de sus esventajas se encuentran
+Y en algunas de sus esventajas se encuentran:
 
  - Falta de reutilización
  - Dificultad en la tramitación de excepciones
