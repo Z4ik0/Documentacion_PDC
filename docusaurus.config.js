@@ -89,7 +89,7 @@ const config = {
             label: 'Patrones de diseño de comportamiento',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Z4ik0/Documentacion_PDC',
             label: 'GitHub',
             position: 'right',
           },
