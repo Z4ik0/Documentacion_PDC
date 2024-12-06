@@ -2,7 +2,7 @@
 
 El Proyecto de Documentación de Patrones de Diseño de Comportamiento tiene como objetivo crear una referencia completa, accesible y bien estructurada sobre los patrones de diseño de comportamiento, esta documentación está orientada a equipos de software que buscan comprender y aplicar estos patrones para mejorar la calidad, la flexibilidad y la mantenibilidad de sus sistemas. 
 
-![Patrón de comportamiento](https://danielggarcia.wordpress.com/wp-content/uploads/2014/05/052014_0541_patronesdec1.png)
+![Patrón de comportamiento](https://adrianvillafana.com/wp-content/uploads/2018/02/patrones_disec3b1o.jpg)
 
 ## Propósito de los Patrones.
 
