@@ -12,16 +12,16 @@ Los patrones de comportamiento hablan de la lógica de nuestro sistema, algoritm
    
 ## Algunos Patrones de Comportamiento
 
-# Chain of Responsibility
-# Command
-# Iterator
-# Mediator
-# Memento
-# Observer
-# State
-# Strategy
-# Template Method
-# Visitor
+1. Chain of Responsibility
+2. Command
+3. Iterator
+4. Mediator
+5. Memento
+6. Observer
+7. State
+8. Strategy
+9. Template Method
+10 Visitor
 
 ## Caracteristicas
 
@@ -34,11 +34,13 @@ Los patrones de diseño de comportamiento son soluciones a problemas comunes en 
 
 ## Ventajas y Desventajas
 
-Los patrones de diseño de comportamiento son plantillas que se utilizan para resolver problemas comunes en el desarrollo de software algunas en algunas sus ventajas y desventajas se encuentran:  
+Los patrones de diseño de comportamiento son plantillas que se utilizan para resolver problemas comunes en el desarrollo de software algunas en algunas sus ventajas son:  
 
  - Mejoran la flexibilidad de la comunicación y el control de las acciones. 
  - Definen cómo interactúan los objetos y cómo se distribuyen las responsabilidades entre ellos.
  - Ayudan a reducir la complejidad del código y del acoplamiento.
+
+y en algunas de sus esventajas se encuentran
 
  - Falta de reutilización
  - Dificultad en la tramitación de excepciones
