@@ -29,8 +29,8 @@ function PatronesComportamiento() {
   return (
     <div
       style={{
-        minHeight: '100vh',
-        background: 'var(--ifm-color-primary-lightest)', 
+        minHeight: '90vh',
+        background: 'var(--ifm-color-primary-header-text)', 
         padding: '24px',
         display: 'flex',
         alignItems: 'center',
@@ -39,9 +39,10 @@ function PatronesComportamiento() {
     >
       <div
         style={{
+          marginTop: '12vh',
           maxWidth: '1200px',
           width: '100%',
-          backgroundColor: 'white', // Fondo blanco por defecto
+          backgroundColor: 'var(--ifm-color-primary-card)', // Fondo blanco por defecto
           borderRadius: '24px',
           boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
           overflow: 'hidden',
@@ -51,26 +52,26 @@ function PatronesComportamiento() {
         {/* Encabezado */}
         <header
           style={{
-            backgroundColor: 'var(--ifm-color-primary-dark)',
+            backgroundColor: 'var(--ifm-color-primary-header)',
             padding: '16px 0',
             textAlign: 'center',
           }}
         >
           <h1
             style={{
-              color: 'var(--ifm-color-primary-lightest)',
+              color: 'var(--ifm-color-primary-header-text)',
               fontSize: '24px',
               fontWeight: 'bold',
               textTransform: 'uppercase',
             }}
           >
-            Arquitectura de Software
+            Patrones de diseño de comportamiento
           </h1>
         </header>
 
         {/* Contenido principal */}
         <main
-          style={{
+          style={{ 
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -80,24 +81,14 @@ function PatronesComportamiento() {
         >
           {/* Contenido de texto */}
           <div style={{ flex: 1, textAlign: 'left' }}>
-            <h2
-              style={{
-                fontSize: '48px',
-                fontWeight: '800',
-                lineHeight: '1.2',
-                color: 'var(--ifm-color-primary)', 
-              }}
-            >
-              Patrones de Diseño de
-              <br />
-              Comportamiento
-            </h2>
             <p
               style={{
-                color: 'var(--ifm-color-primary-darkest)',
+                color: 'var(--ifm-color-primary-title)',
                 fontSize: '18px',
                 lineHeight: '1.75',
-                margin: '16px 0',
+                margin: '16px 0 10% 0',
+                fontWeight: '500',
+                textAlign: 'center',
               }}
             >
               Aprende cómo los patrones de diseño de comportamiento te ayudan a
@@ -105,7 +96,7 @@ function PatronesComportamiento() {
               eficiente y flexible.
             </p>
             {/* Botón debajo del texto */}
-            <div style={{ marginTop: '16px' }}>
+            <div style={{ marginTop: '16px', justifySelf: 'center', width: 'max-content', }}>
               <Boton to="/docs/intro">Ver Documentación</Boton>
             </div>
           </div>
