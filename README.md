@@ -1,7 +1,5 @@
 # Patrones de Diseño de Comportamiento.
 
-## Definición de diseño de comportamiento.
-
 Los patrones de comportamiento hablan de la lógica de nuestro sistema, algoritmos, responsabilidades de las clases y cómo se comunican entre sí. 
 
 ![Patrón de comportamiento](https://danielggarcia.wordpress.com/wp-content/uploads/2014/05/052014_0541_patronesdec1.png)
