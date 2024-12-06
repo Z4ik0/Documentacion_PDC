@@ -65,8 +65,6 @@ Son un tipo de patrón de diseño de software que se enfoca en la comunicación 
 
 ## Documentación Por Patrones.
 Cada patrón incluye su propia Definición, Propósito, Características, Ventajas y Desventajas, Ejemplo de Uso en Código y una Analogía.
-Haz clic en cada uno de ellos para ver su Información.
-
 # Chain of Responsability
 **Definición**
 **Propósito**
@@ -137,35 +135,7 @@ Haz clic en cada uno de ellos para ver su Información.
 **Ejemplo de Uso en Código**
 **Analogía**
 
-## Requisitos Previos
--	Node.js
--	npm yarn 
--	Git 
-
-## Instalación del Proyecto:
-
-Git clone [URL del Proyecto]
-
-Acceder al Proyecto:
-Cd Documentación_PDC
-
-Instalar Dependencias:
-npm install
-
-Iniciar el Proyecto:
-npm start 
-
-
 ## Creditos
  - Irving Cruz Chavez
  - Miguel Ignacio Gomez Portes
  - Gerardo Aristeo Morales Alejo
-
-
-
-
-
-
-
-
-
