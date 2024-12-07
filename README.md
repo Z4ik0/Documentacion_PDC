@@ -1,41 +1,46 @@
-# Website
+# Proyecto de Documentacion 
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator..
+El Proyecto de Documentación de Patrones de Diseño de Comportamiento tiene como objetivo crear una referencia completa, accesible y bien estructurada sobre los patrones de diseño de comportamiento, esta documentación está orientada a equipos de software que buscan comprender y aplicar estos patrones para mejorar la calidad, la flexibilidad y la mantenibilidad de sus sistemas. 
 
-### Installation
+![Patrón de comportamiento](https://adrianvillafana.com/wp-content/uploads/2018/02/patrones_disec3b1o.jpg)
 
-```
-$ yarn
-```
+## Propósito de los Patrones.
 
-### Local Development
+Proporcionar una guía completa y estructurada sobre los patrones de diseño de comportamiento, que sirva como una herramienta de referencia para equipos de software, através de esta documentación, nuestro proyecto busca:
 
-```
-$ yarn start
-```
+ - Facilitar el aprendizaje y la aplicación de patrones de diseño de comportamiento.
+ - Promover las buenas prácticas en diseño de software.
+ - Optimizar la comunicación y colaboración en equipos de desarrollo.
+ - Conectar la teoría con la práctica.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Algunos Patrones de Comportamiento
 
-### Build
+1. Chain of Responsibility
+2. Command
+3. Iterator
+4. Mediator
+5. Memento
+6. Observer
+7. State
+8. Strategy
+9. Template Method
+10 Visitor
 
-```
-$ yarn build
-```
+## Realizado con 🛠️
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+ - Docusaurus. https://docusaurus.io/docs/installation
+ - Git Hub. https://github.com/
 
-### Deployment
+## Contribucion.
 
-Using SSH:
+El proyecto contribuye de manera significativa a la comunidad de desarrollo de software y al aprendizaje de buenas prácticas en diseño a través de los siguientes aspectos clave:
 
-```
-$ USE_SSH=true yarn deploy
-```
+ - Proporciona una referencia consolidada y estructurada sobre patrones de diseño de comportamiento.
+ - Ofrece una guía clara y accesible que permite a desarrolladores, tanto principiantes como experimentados.
+ - Sirve como una herramienta de referencia para equipos de desarrollo.
 
-Not using SSH:
+## Autores
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+ - Irving Cruz Chavez
+ - Miguel Ignacio Gomez Portes
+ - Gerardo Aristeo Morales Alejo
